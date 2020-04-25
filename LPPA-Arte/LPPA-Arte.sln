@@ -13,9 +13,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Services", "03 - Servi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Clients", "04 - Clients", "{7D3B6BE6-283B-4913-8705-911086A44303}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtExWeb", "ArtExWeb\ArtExWeb.csproj", "{AEABE1DB-49D5-4179-8DBE-8AC908AD174E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtEx.BL", "ArtEx.BL\ArtEx.BL.csproj", "{903B6CD9-B3F2-4B99-959F-B1D69ED13339}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEABE1DB-49D5-4179-8DBE-8AC908AD174E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEABE1DB-49D5-4179-8DBE-8AC908AD174E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEABE1DB-49D5-4179-8DBE-8AC908AD174E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEABE1DB-49D5-4179-8DBE-8AC908AD174E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{903B6CD9-B3F2-4B99-959F-B1D69ED13339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{903B6CD9-B3F2-4B99-959F-B1D69ED13339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{903B6CD9-B3F2-4B99-959F-B1D69ED13339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{903B6CD9-B3F2-4B99-959F-B1D69ED13339}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AEABE1DB-49D5-4179-8DBE-8AC908AD174E} = {7D3B6BE6-283B-4913-8705-911086A44303}
+		{903B6CD9-B3F2-4B99-959F-B1D69ED13339} = {67754CA7-4AD3-4D0E-AE62-4FD40FEE4693}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {70F24BC3-5F09-4ABE-8DF1-3DBD59C12106}
