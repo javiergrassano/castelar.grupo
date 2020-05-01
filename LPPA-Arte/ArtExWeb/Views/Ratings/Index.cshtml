@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ArtEx.EF.Artist>
+﻿@model IEnumerable<ArtEx.EF.Rating>
 
 @{
     ViewBag.Title = "Index";
@@ -12,22 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.firstName)
+            @Html.DisplayNameFor(model => model.product.title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.lastName)
+            @Html.DisplayNameFor(model => model.user.firstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.lifeSpan)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.country)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.totalProducts)
+            @Html.DisplayNameFor(model => model.stars)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.createdOn)
@@ -47,22 +38,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.firstName)
+            @Html.DisplayFor(modelItem => item.product.title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.lastName)
+            @Html.DisplayFor(modelItem => item.user.firstName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.lifeSpan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.country)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.totalProducts)
+            @Html.DisplayFor(modelItem => item.stars)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.createdOn)
@@ -77,8 +59,9 @@
             @Html.DisplayFor(modelItem => item.changedBy)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Mirar", "View", new { id=item.id }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
 }

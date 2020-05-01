@@ -1,0 +1,74 @@
+﻿@model ArtEx.EF.Rating
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rating</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.product.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stars)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stars)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.changedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.changedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.changedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.changedBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
