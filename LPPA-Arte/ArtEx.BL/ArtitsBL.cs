@@ -44,7 +44,7 @@ namespace ArtEx.BL
                 if (model.id <= 0)
                 {
                     modelDB = new Artist();
-                    db.Artists.Add(model);
+                    db.Artists.Add(modelDB);
                 }
                 else
                 {
@@ -65,9 +65,9 @@ namespace ArtEx.BL
             catch (Exception ex)
             {
                 if(model.id<=0)
-                    throw new CrudException("Artitas", CrudAction.Create, ex.Message);
+                    throw new CrudException("Artistas", CrudAction.Create, ex.Message);
                 else
-                    throw new CrudException("Artitas", CrudAction.Update, model.id, ex.Message);
+                    throw new CrudException("Artistas", CrudAction.Update, model.id, ex.Message);
             }
         }
 

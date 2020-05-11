@@ -1,98 +1,30 @@
 ﻿@model Artist
-
 @{
-    ViewBag.Title = "Details";
+    string imagenFile = $"../../public/artist_{Model.id}.jpg";
+    string flagFile = $"../../public/flag_{Model.country}.png";
 }
 
-<h2>Details</h2>
+<section is="artistsSection">
+    <div class="container">
 
-<div>
-    <h4>Artist</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.firstName)
-        </dt>
+        <h3>
+            @Html.DisplayFor(modelItem => Model.lastName), @Html.DisplayFor(modelItem => Model.firstName)
+        </h3>
+        <hr />
+        <img class="photo" src="@imagenFile" />
+        <br />
+        <span>
+            @Html.DisplayFor(modelItem => Model.lifeSpan)<br />
+            @Html.DisplayFor(modelItem => Model.country) <img class="flag" src="@flagFile" />
+        </span>
+        <br />
+        <b>Descripcion:</b>
+        @Html.DisplayFor(model => model.description)
 
-        <dd>
-            @Html.DisplayFor(model => model.firstName)
-        </dd>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.lastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.lastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.lifeSpan)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.lifeSpan)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.country)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.country)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.totalProducts)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.totalProducts)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.createdOn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.createdOn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.createdBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.createdBy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.changedOn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.changedOn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.changedBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.changedBy)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    </div>
+</section>

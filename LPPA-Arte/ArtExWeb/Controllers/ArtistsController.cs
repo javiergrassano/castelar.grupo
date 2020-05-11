@@ -44,6 +44,7 @@ namespace ArtExWeb.Controllers
             if (ctx.IsValid(artist))
             {
                 ctx.Update(artist);
+                return RedirectToAction("Index");
             }
             return View(artist);
         }

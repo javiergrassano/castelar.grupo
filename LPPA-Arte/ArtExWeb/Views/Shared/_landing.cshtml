@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AE - ArtExpress</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/headerStyle.css" rel="stylesheet" />
+    <link href="~/Content/contentStyle.css" rel="stylesheet" />
+    <link href="~/Content/footerStyle.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <!-- Cabecera -->
+    <header>
+        <nav>
+            <Logo />
+            <a href="/" title="Principal">
+                <img class="logo" src="/content/img/logo.png" alt="AE" /> Arte Express
+            </a>
+            <ul>
+                <li>
+                    <a href="@Url.Action("Index","Artists")">
+                        <img src="~/Content/img/artists.png" />
+                        <label>Artistas</label>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Products")">
+                        <img src="~/Content/img/products.png" />
+                        <span>Galeria</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Contenido -->
+
+    <div>
+
+        @RenderBody()
+
+    </div>
+
+    <!-- Contenido relacionado-->
+    @*<aside id="pub">
+            <article>
+                <div>
+                    <h3>Sidebar</h3>
+                    <div>
+                        <ul>
+                            <li><a href="/">Principal</a> </li>
+                            <li><a href="/Home/Contact">Contacto</a> </li>
+                            <li><a href="/Home/About">Acerca de</a> </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </article>
+
+        </aside>*@
+    <!-- Pie de pagina -->
+<footer>
+    <div class="container">
+        <div class="col-3">
+            <h4>Quienes somos</h4>
+            <p>Alumnos de la facultad de Ingenieria de l aUniversidad Abierta Inteamericana. Sede Castelar</p>
+            <p>
+                Materia: Lenguaje de Programación Para la Administración<br />
+                Profesor: Victor Contreras.
+                Año: 2020
+            </p>
+        </div>
+
+        <div class="col-3">
+            <h4>Alumnos</h4>
+            <div>
+                <div class="media">
+                    <div class="pull-left">
+                        <img src="images/blog/thumb1.jpg" alt="">
+                    </div>
+                    <div class="media-body">
+                        <span class="media-heading"><a href="#">Cortez, Hernan</a></span>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="pull-left">
+                        <img src="images/blog/thumb2.jpg" alt="">
+                    </div>
+                    <div class="media-body">
+                        <span class="media-heading"><a href="#">Grassano, Javier</a></span>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="pull-left">
+                        <img src="images/blog/thumb3.jpg" alt="">
+                    </div>
+                    <div class="media-body">
+                        <span class="media-heading"><a href="#">Zalazar, Agustin</a></span>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.col-md-3-->
+
+        <div class="col-3">
+            <h4>Company</h4>
+            <div>
+                <ul class="arrow">
+                    <li><a href="#">Company Overview</a></li>
+                    <li><a href="#">Meet The Team</a></li>
+                    <li><a href="#">Our Awesome Partners</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Frequently Asked Questions</a></li>
+                    <li><a href="#">Conatct Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Copyright</a></li>
+                </ul>
+            </div>
+        </div><!--/.col-md-3-->
+    </div>
+</footer><!--/#footer-->
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
