@@ -1,86 +1,40 @@
 ﻿@model IEnumerable<ArtEx.EF.Artist>
 
-@{
-    ViewBag.Title = "Index";
-}
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.firstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.lastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.lifeSpan)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.country)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.totalProducts)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.createdOn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.createdBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.changedOn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.changedBy)
-        </th>
-        <th></th>
-    </tr>
+    <section is="artistsSection">
+        <div class="container">
+            <h2>Los Artitas</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.firstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.lastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.lifeSpan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.country)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.totalProducts)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.createdOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.createdBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.changedOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.changedBy)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Mirar", "View", new { id=item.id }) |
-        </td>
-    </tr>
-}
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
 
-</table>
+            @foreach (var item in Model)
+            {
+        <div class="card" onclick="window.location.href = '@Url.Action("View", "Artists", new { id = item.id })';">
+            @{
+                string imagenFile = $"public/artist_{item.id}.jpg";
+                string flagFile = $"public/flag_{item.country}.png";
+            }
+            <img class="photo" src="@imagenFile" />
+            <br />
+            <span>
+                @Html.DisplayFor(modelItem => item.lastName),
+                @Html.DisplayFor(modelItem => item.firstName)
+            </span>
+            <br />
+            <span>
+                @Html.DisplayFor(modelItem => item.lifeSpan)
+                @Html.DisplayFor(modelItem => item.country) <img class="flag" src="@flagFile" />
+            </span>
+
+            <div>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id })
+            </div>
+        </div>
+            }
+
+
+        </div>
+    </section>
