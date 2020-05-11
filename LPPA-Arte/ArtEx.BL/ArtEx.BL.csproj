@@ -144,6 +144,7 @@
     <Compile Include="EF\OrderNumber.cs" />
     <Compile Include="EF\Product.cs" />
     <Compile Include="Exceptions\CrudException.cs" />
+    <Compile Include="ProductBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EF\Rating.cs" />
     <Compile Include="EF\User.cs" />

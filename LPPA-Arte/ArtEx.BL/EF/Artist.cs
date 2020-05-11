@@ -24,6 +24,9 @@ namespace ArtEx.EF
         [StringLength(30)]
         public string lastName { get; set; }
 
+        [NotMapped]
+        public string fullName { get => $"{lastName}, {firstName}"; }
+
         [StringLength(30)]
         public string lifeSpan { get; set; }
 
