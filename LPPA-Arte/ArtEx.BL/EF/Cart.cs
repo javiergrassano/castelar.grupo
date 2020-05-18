@@ -11,7 +11,7 @@ namespace ArtEx.EF
     {
         public Cart()
         {
-            cartItems = new List<CartItem>();
+            Items = new List<CartItem>();
         }
 
         [Required]
@@ -22,6 +22,6 @@ namespace ArtEx.EF
 
         public int itemCount { get; set; }
 
-        public virtual List<CartItem> cartItems { get; set; }
+        public virtual List<CartItem> Items { get; set; }
     }
 }

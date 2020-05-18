@@ -20,6 +20,9 @@ namespace ArtEx.EF
 
         public int quantity { get; set; }
 
+        [NotMapped]
+        public double total { get => price * (double)quantity; }
+
         public virtual Order order { get; set; }
 
         public virtual Product product { get; set; }

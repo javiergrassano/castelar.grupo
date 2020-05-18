@@ -130,6 +130,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartBL.cs" />
     <Compile Include="ArtitsBL.cs" />
     <Compile Include="BusinessContext.cs" />
     <Compile Include="InvalidRow.cs" />
