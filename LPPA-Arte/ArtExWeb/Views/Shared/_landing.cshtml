@@ -21,11 +21,27 @@
             }
         });
 
-        $('#logo').on('click', () => {
+        $(document).on('click', 'nav a', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            var id = $(this).attr("href");
+            var offset = 30;
+            var target = $(id).offset().top - offset;
+            $('html,body').animate({
+                scrollTop: target
+            }, 400);
+        });
+
+        $(document).on('click', '.logo', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
             $('html,body').animate({
                 scrollTop: 0
-            }, 500);
+            }, 400);
         });
+
     </script>
     <!-- Cabecera -->
     <!--
@@ -55,7 +71,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
     <header class="menu">
         <div class="row">
-            <a class="logo" href="#">ART EXPRESS</a>
+            <a class="logo" href="">ART EXPRESS</a>
             <nav>
                 <ul>
                     <li><a href="#sec01">Artistas</a></li>
