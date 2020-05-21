@@ -4,15 +4,31 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AE - ArtExpress</title>
-    <link href="~/Content/Site.css" rel="stylesheet" />
+    <!--
+    <link href="~/Content/Site.css" rel="stylesheet" />-->
     <link href="~/Content/headerStyle.css" rel="stylesheet" />
-    <link href="~/Content/contentStyle.css" rel="stylesheet" />
+    <!--<link href="~/Content/contentStyle.css" rel="stylesheet" />-->
     <link href="~/Content/footerStyle.css" rel="stylesheet" />
 </head>
 <body>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script>
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 50) {
+                $('.menu').addClass('sticky');
+            } else {
+                $('.menu').removeClass('sticky');
+            }
+        });
 
-
+        $('#logo').on('click', () => {
+            $('html,body').animate({
+                scrollTop: 0
+            }, 500);
+        });
+    </script>
     <!-- Cabecera -->
+    <!--
     <header>
         <nav>
             <Logo />
@@ -21,19 +37,32 @@
             </a>
             <ul>
                 <li>
-                    <a href="@Url.Action("Index","Artists")">
+                    <a href="@*Url.Action("Index","Artists")">*@
                         <img src="~/Content/img/artists.png" />
                         <label>Artistas</label>
                     </a>
                 </li>
                 <li>
-                    <a href="@Url.Action("Index","Products")">
+                    <a href="@*@Url.Action("Index","Products")">*@
                         <img src="~/Content/img/products.png" />
                         <span>Galeria</span>
                     </a>
                 </li>
             </ul>
         </nav>
+    </header>
+    -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
+    <header class="menu">
+        <div class="row">
+            <a class="logo" href="#">ART EXPRESS</a>
+            <nav>
+                <ul>
+                    <li><a href="#sec01">Artistas</a></li>
+                    <li><a href="#sec02">Galería</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <!-- Contenido -->
 
@@ -60,49 +89,56 @@
             </article>
 
         </aside>*@
-    <!-- Pie de pagina -->
-<footer>
-    <div class="container">
-        <div class="col-3">
-            <h4>Quienes somos</h4>
-            <p>Alumnos de la facultad de Ingenieria de l aUniversidad Abierta Inteamericana. Sede Castelar</p>
-            <p>
-                Materia: Lenguaje de Programación Para la Administración<br />
-                Profesor: Victor Contreras.
-                Año: 2020
-            </p>
-        </div>
+    <!-- Pie de pagina     <footer>-->
 
-        <div class="col-3">
-            <h4>Alumnos</h4>
-            <div>
-                <div class="media">
-                    <div class="pull-left">
-                        <img src="images/blog/thumb1.jpg" alt="">
-                    </div>
-                    <div class="media-body">
-                        <span class="media-heading"><a href="#">Cortez, Hernan</a></span>
-                    </div>
+    <div class="row content">
+        <h1>Quienes somos</h1>
+        <p>Alumnos de la facultad de Ingenieria de la Universidad Abierta Inteamericana. Sede Castelar</p>
+        <p>
+            Materia: Lenguaje de Programación Para la Administración<br />
+            Profesor: Victor Contreras.
+            Año: 2020
+        </p>
+        <p>
+            <a href="#">Cortes, Hernan</a><br>
+            <a href="#">Grassano, Javier</a><br>
+            <a href="#">Zalazar, Agustin</a><br>
+        </p>
+    </div>
+    <!--
+    <div class="row">
+        <h4>Alumnos</h4>
+        <div>
+            <div class="media">
+                <div class="pull-left">
+                    <img src="images/blog/thumb1.jpg" alt="">
                 </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <img src="images/blog/thumb2.jpg" alt="">
-                    </div>
-                    <div class="media-body">
-                        <span class="media-heading"><a href="#">Grassano, Javier</a></span>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="pull-left">
-                        <img src="images/blog/thumb3.jpg" alt="">
-                    </div>
-                    <div class="media-body">
-                        <span class="media-heading"><a href="#">Zalazar, Agustin</a></span>
-                    </div>
+                <div class="media-body">
+                    <span class="media-heading"><a href="#">Cortes, Hernan</a></span>
                 </div>
             </div>
-        </div><!--/.col-md-3-->
+            <div class="media">
+                <div class="pull-left">
+                    <img src="images/blog/thumb2.jpg" alt="">
+                </div>
+                <div class="media-body">
+                    <span class="media-heading"><a href="#">Grassano, Javier</a></span>
+                </div>
+            </div>
+            <div class="media">
+                <div class="pull-left">
+                    <img src="images/blog/thumb3.jpg" alt="">
+                </div>
+                <div class="media-body">
+                    <span class="media-heading"><a href="#">Zalazar, Agustin</a></span>
+                </div>
+            </div>
+        </div>
 
+    </div>
+        -->
+    <!--/.col-md-3-->
+    <!--
         <div class="col-3">
             <h4>Company</h4>
             <div>
@@ -118,9 +154,10 @@
                     <li><a href="#">Copyright</a></li>
                 </ul>
             </div>
-        </div><!--/.col-md-3-->
-    </div>
-</footer><!--/#footer-->
+        </div><!--/.col-md-3
+        </div>
+    -->
+    <!--  </footer>/#footer-->
 
 
 

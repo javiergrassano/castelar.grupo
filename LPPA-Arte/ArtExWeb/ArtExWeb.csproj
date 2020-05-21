@@ -342,12 +342,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\footerStyle.css" />
+    <Content Include="Content\headerStyle.css" />
     <Content Include="Content\img\bg1.jpg" />
     <Content Include="Content\img\bg2.jpg" />
     <Content Include="Content\img\bg3.jpg" />
     <Content Include="Content\mainslider.css" />
     <Content Include="Content\contentStyle.css" />
-    <Content Include="Content\headerStyle.css" />
+    <Content Include="Content\headerStyle_old.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
