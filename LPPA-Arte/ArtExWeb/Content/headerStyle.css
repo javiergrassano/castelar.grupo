@@ -59,6 +59,10 @@ nav {
             font-size: 12px;
         }
 
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+
 .row {
     width: 100%;
     max-width: 940px;
@@ -102,32 +106,3 @@ p {
     padding: 50px 2% 250px;
 }
 
-@-webkit-keyframes scroll {
-    0% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 0;
-        -webkit-transform: translateY(20px);
-        transform: translateY(20px);
-    }
-}
-
-@keyframes scroll {
-    0% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 0;
-        -webkit-transform: translateY(20px);
-        -ms-transform: translateY(20px);
-        transform: translateY(20px);
-    }
-}
