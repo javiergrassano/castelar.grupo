@@ -31,25 +31,25 @@
     position: absolute;
     display: block;
     cursor:default;
-    top: 35%;
+    top: 30%;
     display: none;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     font-weight: bold;
     font-size: 1.6em;
-    text-shadow: 1px 5px 10px black;
+    //text-shadow: 1px 5px 10px black;
     transition-duration: .3s;
 }
 
 .galeria-texto {
     position: absolute;
-    top: 70%;
+    top: 50%;
     cursor: default;
     max-width: 80%;
     text-align: center;
     left: 50%;
-    text-shadow: 1px 5px 10px black;
+    //text-shadow: 1px 5px 10px black;
     font-size: 1em;
     display: none;
     margin-right: -50%;
@@ -61,20 +61,20 @@
     transform: scale(1.2);
     transition-duration: .3s;
     filter: grayscale(50%);
-    opacity: .9;
+    opacity: .3;
 }
 
 .galeria-container:hover span {
-    color: white;
+    color: black;
     display: block;
     transition-duration: .3s;
 }
 
-.galeria-container:hover .galeria-boton {
+.galeria-container:hover .galeria-boton-ver-mas {
     opacity: 1;
 }
 
-.galeria-boton {
+.galeria-boton-ver-mas {
     position: absolute;
     width: 400px;
     left: 2%;
@@ -84,7 +84,32 @@
     transition: opacity .35s ease;
 }
 
-    .galeria-boton a {
+    .galeria-boton-ver-mas a {
+        width: 200px;
+        padding: 12px 48px;
+        text-align: center;
+        color: black;
+        border: solid 2px black;
+        z-index: 1;
+    }
+
+    .galeria-boton-ver-mas a:hover {
+        text-shadow: 1px 5px 10px black;
+        transition: opacity .35s ease;
+        background-color: #888888;
+    }
+
+.galeria-boton-agregar-al-carrito {
+    position: absolute;
+    width: 400px;
+    left: 2%;
+    top: 0%;
+    text-align: center;
+    opacity: 1;
+    transition: opacity .35s ease;
+}
+
+    .galeria-boton-agregar-al-carrito {
         width: 200px;
         padding: 12px 48px;
         text-align: center;
