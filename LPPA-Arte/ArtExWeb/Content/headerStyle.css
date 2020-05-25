@@ -1,33 +1,28 @@
 ﻿.menu {
-    position: fixed;
-    max-height: 70px;
     z-index: 999;
+    height: 70px;
     width: 100%;
-    padding-top: 17px;
-    background: none;
-    overflow: hidden;
-    transition: all 0.3s;
-    opacity: 0;
-    top: -100px;
+    padding-top: 4px;
     padding-bottom: 6px;
-    font-family: "Montserrat", sans-serif;
-    -webkit-transition: all 0.3s;
-    -webkit-box-shadow: 0 5px 5px #888888;
-    -moz-box-shadow: 0 5px 5px #888888;
+    background-color: #51514a;
+    font-family: "PlayFair Display", "Montserrat", sans-serif;
     box-shadow: 0 5px 5px #888888;
 }
 
-.sticky {
-    background-color: #51514a;
-    opacity: 1;
-    top: 0px;
+.menuMini {
+    position: fixed;
+    z-index: 999;
+    height: 30px;
+    padding-top: 7px;
+    padding-bottom: 3px;
 }
 
 .logo {
     width: 50px;
-    font-size: 25px;
+    font-size: 28px;
     color: #d5cfcf;
     text-transform: uppercase;
+    transition: all 0.2s;
     float: left;
     display: block;
     margin-top: 0;
@@ -35,9 +30,18 @@
     margin-bottom: 10px;
 }
 
+.logoMini {
+    width: 95px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.navMini {
+    margin-top: 0;
+}
+
 nav {
     float: right;
-    width: 60%;
 }
 
     nav ul {
@@ -63,6 +67,17 @@ nav {
             color: #ffffff;
         }
 
+        nav ul ul {
+            position: absolute;
+            left: -999em;
+            top: 20em;
+        }
+
+        nav ul li:hover ul {
+            left: 0;
+            top: auto;
+        }
+
 .row {
     width: 100%;
     max-width: 940px;
@@ -76,9 +91,11 @@ nav {
 }
 
 body {
+    margin: 0px;
+    height: 100%;
     color: #404040;
     background: #FFFFFF;
-    font-family: "Cardo", serif;
+    font-family: "PlayFair Display", "Cardo", serif;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
 }
@@ -91,7 +108,7 @@ h1 {
     font-size: 30px;
     line-height: 1.8;
     text-transform: uppercase;
-    font-family: "Montserrat", sans-serif;
+    font-family: "PlayFair Display", "Montserrat", sans-serif;
 }
 
 p {
@@ -106,3 +123,19 @@ p {
     padding: 50px 2% 250px;
 }
 
+footer {
+    clear: both;
+    position: relative;
+    float: none;
+    width: 100%;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    background-color: #51514a;
+    color: #d5cfcf;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    height: 70px;
+    box-shadow: 0 -5px 5px #888888;
+}
