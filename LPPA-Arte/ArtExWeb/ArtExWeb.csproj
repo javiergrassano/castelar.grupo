@@ -342,6 +342,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\footerStyle.css" />
+    <Content Include="Content\Galeria.css" />
     <Content Include="Content\headerStyle.css" />
     <Content Include="Content\img\bg1.jpg" />
     <Content Include="Content\img\bg2.jpg" />

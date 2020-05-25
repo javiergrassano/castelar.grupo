@@ -80,9 +80,9 @@ nav {
 
 .row {
     width: 100%;
-    max-width: 940px;
+    max-width: 1280px;
     margin: 0 auto;
-    position: relative;
+    //position: relative;
     padding: 0 1%;
 }
 
@@ -120,7 +120,7 @@ p {
 }
 
 .content {
-    padding: 50px 2% 250px;
+    padding: 10px 2% 250px;
 }
 
 footer {

@@ -44,6 +44,7 @@
                     <li><a href="#sec01">Artistas</a></li>
                     <li><a href="#sec02">Galería</a></li>
                     <li><a href="#sec03">Nuevas Ideas</a></li>
+                    <li><a href="#sec04">Quienes Somos</a></li>
                 </ul>
             </nav>
         </div>
@@ -53,22 +54,6 @@
 
         @RenderBody()
 
-    </div>
-
-
-    <div class="row content">
-        <h1>Quienes somos</h1>
-        <p>Alumnos de la facultad de Ingenieria de la Universidad Abierta Inteamericana. Sede Castelar</p>
-        <p>
-            Materia: Lenguaje de Programación Para la Administración<br />
-            Profesor: Victor Contreras.
-            Año: 2020
-        </p>
-        <p>
-            <a href="#">Cortes, Hernan</a><br>
-            <a href="#">Grassano, Javier</a><br>
-            <a href="#">Zalazar, Agustin</a><br>
-        </p>
     </div>
     <!--
     <div class="row">
@@ -150,7 +135,7 @@
             e.stopPropagation();
             e.stopImmediatePropagation();
             var id = $(this).attr("href");
-            var offset = 30;
+            var offset = 20;
             var target = $(id).offset().top - offset;
             $('html,body').animate({
                 scrollTop: target
