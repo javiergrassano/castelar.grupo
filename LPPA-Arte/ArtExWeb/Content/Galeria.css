@@ -24,13 +24,13 @@
     max-width: 100%;
     display: block;
     overflow: hidden;
-    cursor: pointer;
+    cursor: default;
 }
 
 .galeria-titulo {
     position: absolute;
     display: block;
-    cursor: pointer;
+    cursor:default;
     top: 35%;
     display: none;
     left: 50%;
@@ -45,7 +45,7 @@
 .galeria-texto {
     position: absolute;
     top: 70%;
-    cursor: pointer;
+    cursor: default;
     max-width: 80%;
     text-align: center;
     left: 50%;
@@ -61,7 +61,7 @@
     transform: scale(1.2);
     transition-duration: .3s;
     filter: grayscale(50%);
-    opacity: .7;
+    opacity: .9;
 }
 
 .galeria-container:hover span {
@@ -69,3 +69,26 @@
     display: block;
     transition-duration: .3s;
 }
+
+.galeria-container:hover .galeria-boton {
+    opacity: 1;
+}
+
+.galeria-boton {
+    position: absolute;
+    width: 400px;
+    left: 2%;
+    top: 85%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+}
+
+    .galeria-boton a {
+        width: 200px;
+        padding: 12px 48px;
+        text-align: center;
+        color: white;
+        border: solid 2px white;
+        z-index: 1;
+    }
