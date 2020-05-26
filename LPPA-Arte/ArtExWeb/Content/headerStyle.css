@@ -30,6 +30,13 @@
     margin-bottom: 10px;
 }
 
+.colorLogo {
+    background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .logoMini {
     width: 95px;
     font-size: 15px;
