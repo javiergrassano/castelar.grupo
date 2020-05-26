@@ -31,7 +31,7 @@
     position: absolute;
     display: block;
     cursor:default;
-    top: 30%;
+    top: 20%;
     display: none;
     left: 50%;
     margin-right: -50%;
@@ -44,7 +44,7 @@
 
 .galeria-texto {
     position: absolute;
-    top: 50%;
+    top: 40%;
     cursor: default;
     max-width: 80%;
     text-align: center;
@@ -55,6 +55,21 @@
     margin-right: -50%;
     transition-duration: .3s;
     transform: translate(-50%, -50%)
+}
+
+.galeria-precio {
+    position: absolute;
+    display: block;
+    cursor: default;
+    top: 60%;
+    display: none;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 1.6em;
+    //text-shadow: 1px 5px 10px black;
+    transition-duration: .3s;
 }
 
 .galeria-container:hover img {
