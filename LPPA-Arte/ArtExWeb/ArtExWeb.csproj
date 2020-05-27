@@ -344,9 +344,6 @@
     <Content Include="Content\footerStyle.css" />
     <Content Include="Content\Galeria.css" />
     <Content Include="Content\headerStyle.css" />
-    <Content Include="Content\img\bg1.jpg" />
-    <Content Include="Content\img\bg2.jpg" />
-    <Content Include="Content\img\bg3.jpg" />
     <Content Include="Content\mainslider.css" />
     <Content Include="Content\contentStyle.css" />
     <Content Include="Content\headerStyle_old.css" />
@@ -354,13 +351,18 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\img\artists.png" />
-    <Content Include="Content\img\logo.png" />
-    <Content Include="Content\img\products.png" />
     <Content Include="public\artist_1.jpg" />
+    <Content Include="public\artist_10.jpg" />
     <Content Include="public\artist_8.jpg" />
+    <Content Include="public\artist_9.jpg" />
+    <Content Include="public\flag_españa.png" />
     <Content Include="public\flag_francia.png" />
     <Content Include="public\flag_holanda.png" />
+    <Content Include="public\flag_italia.png" />
+    <Content Include="public\pictures\la-scapigliata-da-vinci.jpg" />
+    <Content Include="public\pictures\mona-lisa-da-vinci.jpg" />
+    <Content Include="public\pictures\ultima-cena-reproduccion.jpg" />
+    <Content Include="public\pictures\virgen-huso-leonardo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\FTP Server.pubxml" />
@@ -375,6 +377,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -412,9 +415,7 @@
     <Content Include="Views\Artists\View.cshtml" />
     <Content Include="Views\Artists\Edit.cshtml" />
     <Content Include="Views\Artists\Index.cshtml" />
-    <Content Include="Views\Products\Create.cshtml" />
-    <Content Include="Views\Products\Delete.cshtml" />
-    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\View.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Ratings\Create.cshtml" />

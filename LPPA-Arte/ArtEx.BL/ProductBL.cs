@@ -48,7 +48,7 @@ namespace ArtEx.BL
                 if (model.id <= 0)
                 {
                     modelDB = new Product();
-                    db.Products.Add(model);
+                    db.Products.Add(modelDB);
                 }
                 else
                 {
@@ -85,8 +85,8 @@ namespace ArtEx.BL
             List<InvalidRow> invalidRows = new List<InvalidRow>();
             if (string.IsNullOrEmpty(model.title)) invalidRows.Add(new InvalidRow("Product", "title", model.id, "Valor requerido"));
             if (string.IsNullOrEmpty(model.description)) invalidRows.Add(new InvalidRow("Product", "description", model.id, "Valor requerido"));
-            if (model.artistId > 0) invalidRows.Add(new InvalidRow("Product", "artistId", model.id, "No se encontro un artista"));
-            if (model.price > 0) invalidRows.Add(new InvalidRow("Product", "price", model.id, "El precio tiene que ser mayor a 0"));
+            if (model.artistId <= 0) invalidRows.Add(new InvalidRow("Product", "artistId", model.id, "No se encontro un artista"));
+            if (model.price <= 0) invalidRows.Add(new InvalidRow("Product", "price", model.id, "El precio tiene que ser mayor a 0"));
             return invalidRows;
         }
     }

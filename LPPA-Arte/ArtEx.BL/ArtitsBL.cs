@@ -15,7 +15,7 @@ namespace ArtEx.BL
 
     public partial class BusinessContext
     {
-        public List<Artist> listArtits(string search, int currentPage=0, int totalPerPage = 0, ArtitsOrderBy orderBy = ArtitsOrderBy.fullName)
+        public List<Artist> listArtits(string search="", int currentPage=0, int totalPerPage = 0, ArtitsOrderBy orderBy = ArtitsOrderBy.fullName)
         {
             IQueryable<Artist> rows = db.Artists;
             if (!string.IsNullOrWhiteSpace(search))

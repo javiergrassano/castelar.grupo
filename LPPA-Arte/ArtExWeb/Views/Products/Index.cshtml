@@ -1,93 +1,37 @@
 ﻿@model IEnumerable<ArtEx.EF.Product>
 
-@{
-    ViewBag.Title = "Index";
-}
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.artist.firstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.quantitySold)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.avgStars)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.createdOn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.createdBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.changedOn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.changedBy)
-        </th>
-        <th></th>
-    </tr>
+    <section is="artistsSection">
+        <div class="container">
+            <h2>Galeria</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.artist.firstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.image)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.quantitySold)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.avgStars)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.createdOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.createdBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.changedOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.changedBy)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
 
-</table>
+            @foreach (var item in Model)
+            {
+        <div class="productCard" onclick="window.location.href = '@Url.Action("View", "Products", new { id = item.id })';">
+            @{
+                string imagenFile = $"public/pictures/{item.image}";
+            }
+            <img class="photo" src="@imagenFile" />
+            <br />
+            <span class="title">
+                @Html.DisplayFor(modelItem => item.title)
+            </span>
+            <br />
+            <span class="author">
+                @Html.DisplayFor(modelItem => item.artist.fullName)
+            </span>
+            <br />
+            <span class="price">
+                Precio : $@Html.DisplayFor(modelItem => item.price)
+            </span>
+        </div>
+            }
+
+
+        </div>
+    </section>

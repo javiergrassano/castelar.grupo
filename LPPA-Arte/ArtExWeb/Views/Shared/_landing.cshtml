@@ -6,34 +6,10 @@
     <title>AE - ArtExpress</title>
     <link href="~/Content/headerStyle.css" rel="stylesheet" />
     <link href="~/Content/footerStyle.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body>
 
-    <!-- Cabecera -->
-    <!--
-    <header>
-        <nav>
-            <Logo />
-            <a href="/" title="Principal">
-                <img class="logo" src="/content/img/logo.png" alt="AE" /> Arte Express
-            </a>
-            <ul>
-                <li>
-                    <a href="@*Url.Action("Index","Artists")">*@
-                        <img src="~/Content/img/artists.png" />
-                        <label>Artistas</label>
-                    </a>
-                </li>
-                <li>
-                    <a href="@*@Url.Action("Index","Products")">*@
-                        <img src="~/Content/img/products.png" />
-                        <span>Galeria</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,15 +18,15 @@
             <a class="logo" href=""><span class="colorDorado">ART EXPRESS</span></a>
             <nav>
                 <ul>
-                    <li><a href="#sec01">Artistas</a></li>
-                    <li><a href="#sec02">Galería</a></li>
+                    <li>@Html.ActionLink("Artistas", "Index", "Artists")</li>
+                    <li>@Html.ActionLink("Galería", "Index", "Products")</li>
                     <li><a href="#sec04">NOVEDADES</a></li>
                     <li><a href="#sec03">Quienes Somos</a></li>
                     <li>
                         <a href="#" class="carrito">
                             <i class="fas fa fa-shopping-cart fa-lg"></i>
                             <span class="carrito-cantidad-items">
-                                0
+                               12
                             </span>
                         </a>
                     </li>
@@ -64,66 +40,15 @@
         @RenderBody()
 
     </div>
-    <!--
-    <div class="row">
-        <h4>Alumnos</h4>
-        <div>
-            <div class="media">
-                <div class="pull-left">
-                    <img src="images/blog/thumb1.jpg" alt="">
-                </div>
-                <div class="media-body">
-                    <span class="media-heading"><a href="#">Cortes, Hernan</a></span>
-                </div>
-            </div>
-            <div class="media">
-                <div class="pull-left">
-                    <img src="images/blog/thumb2.jpg" alt="">
-                </div>
-                <div class="media-body">
-                    <span class="media-heading"><a href="#">Grassano, Javier</a></span>
-                </div>
-            </div>
-            <div class="media">
-                <div class="pull-left">
-                    <img src="images/blog/thumb3.jpg" alt="">
-                </div>
-                <div class="media-body">
-                    <span class="media-heading"><a href="#">Zalazar, Agustin</a></span>
-                </div>
-            </div>
-        </div>
 
-    </div>
-        -->
-    <!--/.col-md-3-->
-    <!--
-        <div class="col-3">
-            <h4>Company</h4>
-            <div>
-                <ul class="arrow">
-                    <li><a href="#">Company Overview</a></li>
-                    <li><a href="#">Meet The Team</a></li>
-                    <li><a href="#">Our Awesome Partners</a></li>
-                    <li><a href="#">Our Services</a></li>
-                    <li><a href="#">Frequently Asked Questions</a></li>
-                    <li><a href="#">Conatct Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Copyright</a></li>
-                </ul>
-            </div>
-        </div><!--/.col-md-3
-        </div>
-    -->
-    <!--  </footer>/#footer-->
-
+    <footer>
+        <div class="row">&copy; @DateTime.Now.Year - Hernan Cortes, Javier Grassano, Agustín Zalazar - LPPA - Universidad Abierta Interamericana</div>
+    </footer>
 
 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script>
         $(window).scroll(function () {
             if ($(window).scrollTop() > 50) {
@@ -139,17 +64,17 @@
             }
         });
 
-        $(document).on('click', 'nav a', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            e.stopImmediatePropagation();
-            var id = $(this).attr("href");
-            var offset = 20;
-            var target = $(id).offset().top - offset;
-            $('html,body').animate({
-                scrollTop: target
-            }, 400);
-        });
+        //$(document).on('click', 'nav a', function (e) {
+        //    e.preventDefault();
+        //    e.stopPropagation();
+        //    e.stopImmediatePropagation();
+        //    var id = $(this).attr("href");
+        //    var offset = 20;
+        //    var target = $(id).offset().top - offset;
+        //    $('html,body').animate({
+        //        scrollTop: target
+        //    }, 400);
+        //});
 
         $(document).on('click', '.logo', function (e) {
             e.preventDefault();
@@ -161,9 +86,6 @@
         });
 
     </script>
-
 </body>
-<footer>
-    <div class="row">&copy; @DateTime.Now.Year - Hernan Cortes, Javier Grassano, Agustín Zalazar - LPPA - Universidad Abierta Interamericana</div>
-</footer>
+
 </html>

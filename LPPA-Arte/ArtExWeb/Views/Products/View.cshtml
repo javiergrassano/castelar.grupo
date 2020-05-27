@@ -1,0 +1,37 @@
+﻿@model ArtEx.EF.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    @{
+        string imagenFile = $"public/pictures/{Model.image}";
+    }
+    <img class="photo" src="@imagenFile" />
+    <dl class="dl-horizontal">
+        <dt>Titulo</dt>
+        <dd>@Html.DisplayFor(model => model.title)</dd>
+        <dt>Artista</dt>
+        <dd>@Html.DisplayFor(model => model.artist.fullName)</dd>
+
+        <dt>Descripcion</dt>
+        <dd>@Html.DisplayFor(model => model.description)</dd>
+
+        <dt>Precio</dt>
+        <dd>@Html.DisplayFor(model => model.price)</dd>
+        <dt>Cantidad vendidas</dt>
+        <dd>@Html.DisplayFor(model => model.quantitySold)</dd>
+        <dt>Estrellas</dt>
+        <dd>@Html.DisplayFor(model => model.avgStars)</dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

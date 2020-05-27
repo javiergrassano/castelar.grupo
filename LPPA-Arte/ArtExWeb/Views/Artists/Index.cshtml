@@ -12,26 +12,22 @@
 
             @foreach (var item in Model)
             {
-        <div class="card" onclick="window.location.href = '@Url.Action("View", "Artists", new { id = item.id })';">
+        <div class="artistCard" onclick="window.location.href = '@Url.Action("View", "Artists", new { id = item.id })';">
             @{
                 string imagenFile = $"public/artist_{item.id}.jpg";
                 string flagFile = $"public/flag_{item.country}.png";
             }
             <img class="photo" src="@imagenFile" />
             <br />
-            <span>
+            <span class="name">
                 @Html.DisplayFor(modelItem => item.lastName),
                 @Html.DisplayFor(modelItem => item.firstName)
             </span>
             <br />
-            <span>
+            <span class="detail">
                 @Html.DisplayFor(modelItem => item.lifeSpan)
                 @Html.DisplayFor(modelItem => item.country) <img class="flag" src="@flagFile" />
             </span>
-
-            <div>
-                @Html.ActionLink("Editar", "Edit", new { id = item.id })
-            </div>
         </div>
             }
 
