@@ -99,6 +99,7 @@ galeria-h1 {
     text-align: center;
     opacity: 0;
     transition: opacity .35s ease;
+    cursor: pointer;
 }
 
     .galeria-boton-ver-mas a {
