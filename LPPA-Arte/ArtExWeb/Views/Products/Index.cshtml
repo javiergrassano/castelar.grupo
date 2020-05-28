@@ -1,39 +1,38 @@
 ﻿@model IEnumerable<ArtEx.EF.Product>
 
+<link href="~/Content/Galeria.css" rel="stylesheet" />
 
+<section is="artistsSection">
+    <div class="row content container">
+        <h1>Galería</h1>
 
-    <section is="artistsSection">
-        <div class="row content">
-            <h2>Galeria</h2>
-
-            <p>
-                @Html.ActionLink("Create New", "Create")
-            </p>
-
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <div class="galeria-container-all">
             @foreach (var item in Model)
             {
-                <div class="productCard">
+                <div class="galeria-container">
                     @{
                         string imagenFile = $"public/pictures/{item.image}";
                     }
-                    <img class="photo" src="@imagenFile" onclick="window.location.href = '@Url.Action("View", "Products", new { id = item.id })';" />
+                    <img class="galeria-imagen" src="@imagenFile" onclick="window.location.href = '@Url.Action("View", "Products", new { id = item.id })';" />
                     <br />
-                    <span class="title">
+                    <span class="galeria-titulo">
                         @Html.DisplayFor(modelItem => item.title)
                     </span>
                     <br />
-                    <span class="author">
+                    <span class="galeria-texto">
                         @Html.DisplayFor(modelItem => item.artist.fullName)
                     </span>
                     <br />
-                    <span class="price">
+                    <span class="galeria-precio">
                         Precio : $@Html.DisplayFor(modelItem => item.price)
                     </span>
-                    <a onclick="AddProduct(@item.id,1)">Comprar</a>
+                    <div class="galeria-boton-ver-mas">
+                        <a onclick="AddProduct(@item.id,1)">Agregar</a>
+                    </div>
                 </div>
-
             }
-
-
         </div>
-    </section>
+</section>

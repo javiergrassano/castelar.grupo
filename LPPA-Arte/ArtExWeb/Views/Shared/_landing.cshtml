@@ -15,13 +15,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <header class="menu">
         <div class="row">
-            <a class="logo" href=""><span class="colorDorado">ART EXPRESS</span></a>
+            <a class="logo" href="/"><span class="colorDorado">ART EXPRESS</span></a>
             <nav>
                 <ul>
                     <li>@Html.ActionLink("Artistas", "Index", "Artists")</li>
                     <li>@Html.ActionLink("Galería", "Index", "Products")</li>
-                    <li><a href="#sec04">NOVEDADES</a></li>
-                    <li><a href="#sec03">Quienes Somos</a></li>
+                    <!--
+                    <li><a href="Home#sec04">NOVEDADES</a></li>
+                    <li><a href="Home#sec03">Quienes Somos</a></li>
+                    -->
                     <li>
                         <a href="@Url.Action("Index","Cart")" class="carrito">
                             <i id="logoCarrito" class="fas fa fa-shopping-cart fa-lg"></i>
