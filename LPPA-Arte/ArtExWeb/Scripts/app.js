@@ -4,12 +4,13 @@ function CartTotal() {
         type: 'POST',
         url: 'Cart/GetCartTotal',
         success: function (result) {
-            var cartTotal = $("#cartTotal");
+            var cartTotal = $("#cart_count");
             if (cartTotal) {
                 cartTotal.text(result);
             }
         },
         error: function (result) {
+            alert(JSON.stringify(result));
         }
     });
 }
@@ -20,10 +21,28 @@ function AddProduct(productId, quantity) {
         url: 'Cart/AddProduct',
         data: { productId, quantity},
         success: function (result) {
-            var cartTotal = $("#cartTotal");
-            
+
+
+            var cartCount = $("#cart_count");
+            var cartTotal = $("#cart_total");
+            var quantityInput = $(`#quantity_${productId}`);
+            var totalInput = $(`#total_${productId}`);
+
+            // Actualiza el total en el menu
+            if (cartCount) {
+                cartCount.text(result.cartItemCount);
+            }
+            // Actualiza el total en el menu
             if (cartTotal) {
-                cartTotal.text(result);
+                cartTotal.text(result.cartTotal);
+            }
+            // actualiza la cantidad si existe en la pagina                
+            if (quantityInput) {
+                quantityInput.text(result.quantity);
+            }
+            // actualiza la cantidad si existe en la pagina                
+            if (totalInput) {
+                totalInput.text(result.total);
             }
         },
         error: function (result) {

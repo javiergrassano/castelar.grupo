@@ -23,5 +23,21 @@ namespace ArtEx.EF
         public int itemCount { get; set; }
 
         public virtual List<CartItem> items { get; set; }
+
+        public double total
+        {
+            get
+            {
+                double result = 0;
+                if(items!=null)
+                {
+                    foreach (var item in items)
+                    {
+                        result += item.total;
+                    }
+                }
+                return result;
+            }
+        }
     }
 }
