@@ -3,7 +3,7 @@
 
 
     <section is="artistsSection">
-        <div class="container">
+        <div class="row content">
             <h2>Galeria</h2>
 
             <p>
@@ -12,26 +12,26 @@
 
             @foreach (var item in Model)
             {
-        <div class="productCard">
-            @{
-                string imagenFile = $"public/pictures/{item.image}";
-            }
-            <img class="photo" src="@imagenFile"  onclick="window.location.href = '@Url.Action("View", "Products", new { id = item.id })';"/>
-            <br />
-            <span class="title">
-                @Html.DisplayFor(modelItem => item.title)
-            </span>
-            <br />
-            <span class="author">
-                @Html.DisplayFor(modelItem => item.artist.fullName)
-            </span>
-            <br />
-            <span class="price">
-                Precio : $@Html.DisplayFor(modelItem => item.price)
-            </span>
-            <a onclick="AddProduct(@item.id,1)">Comprar</a>
-        </div>
-      
+                <div class="productCard">
+                    @{
+                        string imagenFile = $"public/pictures/{item.image}";
+                    }
+                    <img class="photo" src="@imagenFile" onclick="window.location.href = '@Url.Action("View", "Products", new { id = item.id })';" />
+                    <br />
+                    <span class="title">
+                        @Html.DisplayFor(modelItem => item.title)
+                    </span>
+                    <br />
+                    <span class="author">
+                        @Html.DisplayFor(modelItem => item.artist.fullName)
+                    </span>
+                    <br />
+                    <span class="price">
+                        Precio : $@Html.DisplayFor(modelItem => item.price)
+                    </span>
+                    <a onclick="AddProduct(@item.id,1)">Comprar</a>
+                </div>
+
             }
 
 
