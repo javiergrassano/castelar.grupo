@@ -37,3 +37,22 @@
     .productCard .price {
         font-size: larger;
     }
+.container-artist {
+    width: 65%;
+    margin: 0px auto;
+    min-height: 865px;
+}
+
+.title-artist h2{
+    float:left;
+}
+
+.title-artist p {
+    float: right;
+}
+.content-cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
