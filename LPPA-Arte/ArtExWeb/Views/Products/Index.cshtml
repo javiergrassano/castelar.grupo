@@ -12,11 +12,11 @@
 
             @foreach (var item in Model)
             {
-        <div class="productCard" onclick="window.location.href = '@Url.Action("View", "Products", new { id = item.id })';">
+        <div class="productCard">
             @{
                 string imagenFile = $"public/pictures/{item.image}";
             }
-            <img class="photo" src="@imagenFile" />
+            <img class="photo" src="@imagenFile"  onclick="window.location.href = '@Url.Action("View", "Products", new { id = item.id })';"/>
             <br />
             <span class="title">
                 @Html.DisplayFor(modelItem => item.title)
@@ -29,7 +29,9 @@
             <span class="price">
                 Precio : $@Html.DisplayFor(modelItem => item.price)
             </span>
+            <a onclick="AddProduct(@item.id,1)">Comprar</a>
         </div>
+      
             }
 
 

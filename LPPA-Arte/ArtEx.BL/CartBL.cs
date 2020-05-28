@@ -20,9 +20,18 @@ namespace ArtEx.BL
         public Cart GetCart(string cookie)
         {
             Cart cart = db.Carts
-                          .Include(x => x.Items)
+                          .Include(x => x.items)
                           .Where(x=>x.cookie==cookie)
                           .FirstOrDefault();
+            if (cart == null)
+            {
+                cart = new Cart();
+                cart.cookie = cookie;
+                cart.cartDate = DateTime.Now; 
+                Audit(cart);
+                db.Carts.Add(cart);
+                db.SaveChanges();
+            }
             return cart;
         }
 
@@ -33,7 +42,7 @@ namespace ArtEx.BL
         /// <param name="productId"></param>
         /// <param name="quantity"></param>
         /// <returns></returns>
-        public CartItem AddItemCart(string cookie, int productId, int quantity)
+        public Cart AddItemCart(string cookie, int productId, int quantity)
         {
             // busca si existe el carrito
             Cart cart = GetCart(cookie);
@@ -44,28 +53,28 @@ namespace ArtEx.BL
                 cart.cookie = cookie;
                 cart.cartDate = DateTime.Now;
                 db.Carts.Add(cart);
-                cart.Items = new List<CartItem>();
+                cart.items = new List<CartItem>();
             }
 
             // busca el producto en el carrito
-            CartItem item = cart.Items.Find(x => x.productId == productId);
+            CartItem item = cart.items.Find(x => x.productId == productId);
             if (item == null)
             {
                 // Al no existir crea uno nuevo
+                item = new CartItem();
                 Product producto = db.Products.Where(x => x.id == productId).FirstOrDefault();
                 item.productId = productId;
                 item.product = producto;
                 item.quantity = 0;
                 item.price = producto.price;
-                cart.Items.Add(item);
-                cart.itemCount++;
-
+                cart.items.Add(item);
             }
+            cart.itemCount += quantity;
             item.quantity += quantity;
             Audit(item);
             Audit(cart);
             db.SaveChanges();
-            return item;
+            return cart;
         }
 
         /// <summary>
@@ -75,7 +84,7 @@ namespace ArtEx.BL
         public void CloseCart(string cookie)
         {
             Cart cart = GetCart(cookie);
-            if (cart.Items == null || cart.Items.Count == 0)
+            if (cart.items == null || cart.items.Count == 0)
                 throw new Exception("No hay items cargados");
 
             //TODO: Falta poner el contador de ordenes
@@ -83,7 +92,7 @@ namespace ArtEx.BL
             Order order = new Order();
             order.orderDate = DateTime.Now;
             order.orderNumber = 0;
-            foreach (var cartItem in cart.Items)
+            foreach (var cartItem in cart.items)
             {
                 OrderDetail orderDetail = new OrderDetail();
                 orderDetail.productId = cartItem.productId;

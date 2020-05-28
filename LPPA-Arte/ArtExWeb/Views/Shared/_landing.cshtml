@@ -23,10 +23,10 @@
                     <li><a href="#sec04">NOVEDADES</a></li>
                     <li><a href="#sec03">Quienes Somos</a></li>
                     <li>
-                        <a href="#" class="carrito">
+                        <a href="@Url.Action("Index","Cart")" class="carrito">
                             <i class="fas fa fa-shopping-cart fa-lg"></i>
-                            <span class="carrito-cantidad-items">
-                               12
+                            <span id="cartTotal" class="carrito-cantidad-items">
+                               0
                             </span>
                         </a>
                     </li>
@@ -50,6 +50,11 @@
     @RenderSection("scripts", required: false)
 
     <script>
+
+        $(document).ready(function () {
+            CartTotal();
+        });
+
         $(window).scroll(function () {
             if ($(window).scrollTop() > 50) {
                 $('.menu').addClass('menuMini');
