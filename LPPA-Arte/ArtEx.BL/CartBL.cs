@@ -42,7 +42,7 @@ namespace ArtEx.BL
         /// <param name="productId"></param>
         /// <param name="quantity"></param>
         /// <returns></returns>
-        public Cart AddItemCart(string cookie, int productId, int quantity)
+        public CartItem AddItemCart(string cookie, int productId, int quantity)
         {
             // busca si existe el carrito
             Cart cart = GetCart(cookie);
@@ -69,12 +69,15 @@ namespace ArtEx.BL
                 item.price = producto.price;
                 cart.items.Add(item);
             }
-            cart.itemCount += quantity;
-            item.quantity += quantity;
-            Audit(item);
-            Audit(cart);
-            db.SaveChanges();
-            return cart;
+            if (item.quantity + quantity > 0)
+            {
+                cart.itemCount += quantity;
+                item.quantity += quantity;
+                Audit(item);
+                Audit(cart);
+                db.SaveChanges();
+            }
+            return item;
         }
 
         /// <summary>
