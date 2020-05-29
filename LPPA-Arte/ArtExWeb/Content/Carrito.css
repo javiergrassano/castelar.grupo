@@ -1,0 +1,100 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.carrito-container {
+    width: 750px;
+    height: 423px;
+    margin: 0px auto;
+    background: #FFFFFF;
+    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito-item {
+    padding: 20px 30px;
+    height: 120px;
+    display: flex;
+}
+
+    .carrito-item:nth-child(3) {
+        border-top: 1px solid #E1E8EE;
+        border-bottom: 1px solid #E1E8EE;
+    }
+
+.carrito-botones {
+    position: relative;
+    padding-top: 30px;
+    margin-right: 60px;
+}
+
+.btn-delete {
+    display: inline-block;
+    Cursor: pointer;
+    width: 18px;
+    height: 17px;
+    background: url("https://img.icons8.com/flat_round/64/000000/delete-sign.png") no-repeat center;
+}
+
+.carrito-imagen {
+    margin-right: 50px;
+}
+
+.carrito-descripcion {
+    padding-top: 10px;
+    margin-right: 60px;
+    width: 215px;
+}
+
+    .carrito-descripcion span {
+        display: block;
+        font-size: 14px;
+        color: #43484D;
+        font-weight: 400;
+    }
+
+        .carrito-descripcion span:first-child {
+            margin-bottom: 5px;
+        }
+
+        .carrito-descripcion span:last-child {
+            font-weight: 300;
+            margin-top: 8px;
+            color: #86939E;
+        }
+
+.carrito-cantidad {
+    padding-top: 20px;
+    margin-right: 60px;
+}
+
+.carrito-precio-total {
+    width: 83px;
+    padding-top: 27px;
+    text-align: center;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+}
+
+.carrito-titulo {
+    height: 60px;
+    border-bottom: 1px solid #E1E8EE;
+    padding: 20px 30px;
+    color: #5E6977;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.carrito-totales {
+    height: 60px;
+    border-top: 2px solid #E1E8EE;
+    border-bottom: 1px solid #E1E8EE;
+    padding: 20px 30px;
+    color: #5E6977;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: right;
+}

@@ -1,0 +1,51 @@
+﻿@model ArtEx.EF.Cart
+
+<section is="artistsSection">
+    <div class="row content container">
+        <h1>Carro de compras</h1>
+        <table class="table">
+            <tr>
+                <th></th>
+                <th>Detalle</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.items)
+            {
+                string imagenFile = $"public/pictures/{item.product.image}";
+                <tr>
+                    <td>
+                        <img class="photo" style="width:70px" src="@imagenFile" onclick="window.location.href = '@Url.Action("View", "Products", new { id = item.id })';" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.product.title)<br />
+                        @Html.DisplayFor(modelItem => item.product.artist.fullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.price)
+                    </td>
+                    <td>
+                        <button onclick="AddProduct(@item.productId,1)">+</button>
+                        <span id="quantity_@item.productId">@item.quantity</span>
+                        <button onclick="AddProduct(@item.productId,-1)">-</button>
+                    </td>
+                    <td>
+                        <span id="total_@item.productId">@item.total</span>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    </td>
+                </tr>
+            }
+            <tr>
+                <th colspan="4">Total</th>
+                <th><span id="cart_total">@Model.total</span></th>
+                <th></th>
+            </tr>
+        </table>
+
+        </div>
+    </section>

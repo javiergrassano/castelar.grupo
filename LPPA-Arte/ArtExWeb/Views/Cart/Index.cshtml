@@ -1,51 +1,63 @@
 ﻿@model ArtEx.EF.Cart
 
+<link href="~/Content/headerStyle.css" rel="stylesheet" />
+<link href="~/Content/Carrito.css" rel="stylesheet" />
+<link href="~/Content/Galeria.css" rel="stylesheet" />
+
 <section is="artistsSection">
     <div class="row content container">
         <h1>Carro de compras</h1>
-        <table class="table">
-            <tr>
-                <th></th>
-                <th>Detalle</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Total</th>
-                <th></th>
-            </tr>
+        <div class="carrito-container">
+
+            <div class="carrito-titulo">
+                Listado de Productos
+            </div>
 
             @foreach (var item in Model.items)
             {
                 string imagenFile = $"public/pictures/{item.product.image}";
-                <tr>
-                    <td>
-                        <img class="photo" style="width:70px" src="@imagenFile" onclick="window.location.href = '@Url.Action("View", "Products", new { id = item.id })';" />
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.product.title)<br />
-                        @Html.DisplayFor(modelItem => item.product.artist.fullName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.price)
-                    </td>
-                    <td>
-                        <button onclick="AddProduct(@item.productId,1)">+</button>
-                        <span id="quantity_@item.productId">@item.quantity</span>
-                        <button onclick="AddProduct(@item.productId,-1)">-</button>
-                    </td>
-                    <td>
-                        <span id="total_@item.productId">@item.total</span>
-                    </td>
-                    <td>
-                        @Html.ActionLink("Delete", "Delete", new { id = item.id })
-                    </td>
-                </tr>
-            }
-            <tr>
-                <th colspan="4">Total</th>
-                <th><span id="cart_total">@Model.total</span></th>
-                <th></th>
-            </tr>
-        </table>
+                <div class="carrito-item">
 
+
+                    <div class="carrito-cantidad">
+                        <span class="btn-delete">
+                            @*@Html.ActionLink("Delete", "Delete", new { id = item.id })*@
+                        </span>
+                    </div>
+
+                    <div class="carrito-imagen">
+                        <img class="photo_" style="width:50px;height:47px" src="@imagenFile" onclick="window.location.href = '@Url.Action("View", "Products", new { id = item.id })';" />
+                    </div>
+
+                    <div class="carrito-descripcion">
+                        <span>
+                            @Html.DisplayFor(modelItem => item.product.title)
+                        </span>
+                        <span>
+                            @Html.DisplayFor(modelItem => item.product.artist.fullName)
+                        </span>
+                    </div>
+
+                    <div class="carrito-cantidad">
+                        <button class="btn-menos" onclick="AddProduct(@item.productId,-1)">-</button>
+                        <span id="quantity_@item.productId">@item.quantity</span>
+                        <button class="btn-mas" onclick="AddProduct(@item.productId,1)">+</button>
+                    </div>
+
+                    <div class="carrito-precio-total">
+
+                        <!--@Html.DisplayFor(modelItem => item.price)-->
+                        <span id="total_@item.productId">@item.total</span>
+                    </div>
+
+                </div>
+            }
         </div>
-    </section>
+        <br><br>
+            <div class="carrito-totales">
+                Total
+                <span id="cart_total">@Model.total</span>
+            </div>
+
+    </div>
+</section>
