@@ -39,6 +39,11 @@
     margin-right: 50px;
 }
 
+.carrito-imagen img {
+    width: 50px;
+    height: 47px;
+}
+
 .carrito-descripcion {
     padding-top: 10px;
     margin-right: 60px;
