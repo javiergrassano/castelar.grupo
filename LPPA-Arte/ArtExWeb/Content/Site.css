@@ -62,3 +62,10 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.artistCard:hover {
+    transform: scale(1.1);
+    transition-duration: .3s;
+    //filter: grayscale(50%);
+    //opacity: .3;
+}
