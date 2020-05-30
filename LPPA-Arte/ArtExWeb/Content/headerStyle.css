@@ -167,3 +167,21 @@ ul li a.carrito .carrito-cantidad-items {
     text-align: center;
     font-family: "Montserrat", sans-serif;
 }
+
+.boton_amarillo {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 5px;
+    border: 2px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+
+    .boton_amarillo:hover {
+        color: #ffffff !important;
+        background: #f6b93b;
+        //border-color: #f6b93b !important;
+        transition: all 0.3s ease 0s;
+    }

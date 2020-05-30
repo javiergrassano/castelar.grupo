@@ -115,13 +115,18 @@ galeria-h1 {
         text-align: center;
         color: black;
         border: solid 2px black;
+        text-transform: uppercase;
         z-index: 1;
+        transition: all 0.3s ease 0s;
     }
 
         .galeria-boton-ver-mas a:hover {
-            text-shadow: 1px 5px 10px black;
-            transition: opacity .35s ease;
+            //text-shadow: 1px 5px 10px black;
+            //transition: opacity .35s ease;
+            transition: all 0.3s ease 0s;
             //background-color: #888888;
+            color: white;
+            border: solid 2px black;
             background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
         }
 

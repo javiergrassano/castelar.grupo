@@ -1,14 +1,16 @@
 ﻿@model IEnumerable<ArtEx.EF.Product>
 
 <link href="~/Content/Galeria.css" rel="stylesheet" />
+<link href="~/Content/headerStyle.css" rel="stylesheet" />
 
 <section is="artistsSection">
     <div class="row content container">
         <h1>Galería</h1>
 
         <p>
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Crear Nuevo", "Create", null, null, new { @class = "boton_amarillo" })
         </p>
+
         <div class="galeria-container-all">
             @foreach (var item in Model)
             {

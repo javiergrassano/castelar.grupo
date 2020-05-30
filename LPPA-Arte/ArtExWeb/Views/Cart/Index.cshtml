@@ -36,9 +36,9 @@
                     </div>
 
                     <div class="carrito-cantidad">
-                        <button class="btn-menos" onclick="AddProduct(@item.productId,-1)">-</button>
+                        <button class="btn-menos galeria-imagen boton_amarillo" onclick="AddProduct(@item.productId,-1)">-</button>
                         <span id="quantity_@item.productId">@item.quantity</span>
-                        <button class="btn-mas" onclick="AddProduct(@item.productId,1)">+</button>
+                        <button class="btn-mas boton_amarillo" onclick="AddProduct(@item.productId,1)">+</button>
                     </div>
 
                     <div class="carrito-precio-total">
@@ -48,10 +48,11 @@
                 </div>
             }
             <div class="carrito-totales">
-                    Total
-                    $<span id="cart_total">@Model.total</span>
+                Total
+                $<span id="cart_total">@Model.total</span>
             </div>
 
         </div>
     </div>
+    
 </section>
