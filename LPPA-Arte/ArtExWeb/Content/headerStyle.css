@@ -177,6 +177,7 @@ ul li a.carrito .carrito-cantidad-items {
     border: 2px solid #494949 !important;
     display: inline-block;
     transition: all 0.3s ease 0s;
+    border-radius: 6px;
 }
 
     .boton_amarillo:hover {
@@ -184,4 +185,5 @@ ul li a.carrito .carrito-cantidad-items {
         background: #f6b93b;
         //border-color: #f6b93b !important;
         transition: all 0.3s ease 0s;
+        border-radius: 6px;
     }

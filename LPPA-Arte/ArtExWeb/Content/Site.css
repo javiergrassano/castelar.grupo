@@ -1,12 +1,14 @@
 ﻿.artistCard {
-    border: 1px solid #808080;
+    //border: 1px solid #808080;
     cursor: pointer;
     width: 220PX;
     padding: 5PX;
     margin: 3PX;
     text-align: center;
-
+    box-shadow: 0 7px 7px #888888;
     float: left;
+    border-radius: 6px;
+    background: #f6f3e6;
 }
 
     .artistCard .name {
@@ -16,6 +18,10 @@
     .artistCard .detail {
         font-size: small;
     }
+
+.artistPhoto {
+    border-radius: 6px;
+}
 
 .productCard {
     border: 1px solid #808080;

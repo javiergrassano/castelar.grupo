@@ -3,13 +3,11 @@
 
 
     <section is="artistsSection">
-        <div class="container-artist">
-            <div class="title-artist">
-                <h2>Los Artitas</h2>
+        <div class="row content container">
+                <h1>Los Artistas</h1>
                 <p>
-                    @Html.ActionLink("Create New", "Create")
+                    @Html.ActionLink("Crear Nuevo", "Create", null, null, new { @class = "boton_amarillo" })
                 </p>
-            </div>
             <div class="content-cards">
                 @foreach (var item in Model)
                 {
@@ -18,7 +16,7 @@
                             string imagenFile = $"public/artist_{item.id}.jpg";
                             string flagFile = $"public/flag_{item.country}.png";
                         }
-                        <img class="photo" src="@imagenFile" />
+                        <img class="photo artistPhoto" src="@imagenFile" />
                         <br />
                         <span class="name">
                             @Html.DisplayFor(modelItem => item.lastName),
