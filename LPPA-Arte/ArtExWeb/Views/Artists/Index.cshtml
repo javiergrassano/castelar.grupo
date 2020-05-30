@@ -3,35 +3,34 @@
 
 
     <section is="artistsSection">
-        <div class=" row content container">
-            <h1>Los Artistas</h1>
-
-            <p>
-                @Html.ActionLink("Create New", "Create")
-            </p>
-
-            @foreach (var item in Model)
-            {
-        <div class="artistCard" onclick="window.location.href = '@Url.Action("View", "Artists", new { id = item.id })';">
-            @{
-                string imagenFile = $"public/artist_{item.id}.jpg";
-                string flagFile = $"public/flag_{item.country}.png";
-            }
-            <img class="photo" src="@imagenFile" />
-            <br />
-            <span class="name">
-                @Html.DisplayFor(modelItem => item.lastName),
-                @Html.DisplayFor(modelItem => item.firstName)
-            </span>
-            <br />
-            <span class="detail">
-                @Html.DisplayFor(modelItem => item.lifeSpan)
-                @Html.DisplayFor(modelItem => item.country) <img class="flag" src="@flagFile" />
-            </span>
-        </div>
-            }
-
-
+        <div class="container-artist">
+            <div class="title-artist">
+                <h2>Los Artitas</h2>
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+            </div>
+            <div class="content-cards">
+                @foreach (var item in Model)
+                {
+                    <div class="artistCard" onclick="window.location.href = '@Url.Action("View", "Artists", new { id = item.id })';">
+                        @{
+                            string imagenFile = $"public/artist_{item.id}.jpg";
+                            string flagFile = $"public/flag_{item.country}.png";
+                        }
+                        <img class="photo" src="@imagenFile" />
+                        <br />
+                        <span class="name">
+                            @Html.DisplayFor(modelItem => item.lastName),
+                            @Html.DisplayFor(modelItem => item.firstName)
+                        </span>
+                        <br />
+                        <span class="detail">
+                            @Html.DisplayFor(modelItem => item.lifeSpan)
+                            @Html.DisplayFor(modelItem => item.country) <img class="flag" src="@flagFile" />
+                        </span>
+                    </div>
+                }
+            </div>
         </div>
     </section>
-<br /><br /><br /><br />
