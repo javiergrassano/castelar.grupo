@@ -4,26 +4,26 @@
     string flagFile = $"../../public/flag_{Model.country}.png";
 }
 
-<section is="artistsSection">
-    <div class="container">
-            <h3>
-                @Html.DisplayFor(modelItem => Model.lastName), @Html.DisplayFor(modelItem => Model.firstName)
-            </h3>
-        <hr />
-        <img class="photo" src="@imagenFile" />
-        <br />
-        <span>
-            @Html.DisplayFor(modelItem => Model.lifeSpan)<br />
-            @Html.DisplayFor(modelItem => Model.country) <img class="flag" src="@flagFile" />
-        </span>
-        <br />
-        <b>Descripcion:</b>
-        @Html.DisplayFor(model => model.description)
+    <section is="artistsSection">
+        <div class="row content container">
 
-        <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-            @Html.ActionLink("Back to List", "Index")
-        </p>
+            <div class="artistForm">
+                <div>
+                    <span class="title">
+                        @Model.lastName, @Model.firstName <small>(@Model.lifeSpan)</small>
+                    </span>
+                    <a class="boton_amarillo" href="/Artists/Edit/@Model.id">Editar</a>
+                </div>
+                <h2>@Html.DisplayFor(modelItem => Model.country) <img class="flag" src="@flagFile" /></h2>
+                
+                <img class="photo" src="@imagenFile" />
+                
+                <span class="">
+                    <b>Descripcion:</b><br/>
+                    @Html.DisplayFor(model => model.description)
+                </span>
+            </div>
+        </div>
+    </section>
 
-    </div>
-</section>
+>

@@ -10,7 +10,7 @@ function CartTotal() {
             }
         },
         error: function (result) {
-            alert(JSON.stringify(result));
+            //alert(JSON.stringify(result));
         }
     });
 }
@@ -46,7 +46,7 @@ function AddProduct(productId, quantity) {
             }
         },
         error: function (result) {
-            alert(JSON.stringify(result.responseText));
+            //alert(JSON.stringify(result.responseText));
             //$.confirm({
             //    title: 'Error!',
             //    content: "No se pudo realizart la compra",
