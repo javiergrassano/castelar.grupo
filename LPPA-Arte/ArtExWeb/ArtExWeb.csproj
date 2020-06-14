@@ -359,10 +359,12 @@
     <Content Include="public\artist_10.jpg" />
     <Content Include="public\artist_8.jpg" />
     <Content Include="public\artist_9.jpg" />
+    <Content Include="public\flag_.png" />
     <Content Include="public\flag_españa.png" />
     <Content Include="public\flag_francia.png" />
     <Content Include="public\flag_holanda.png" />
     <Content Include="public\flag_italia.png" />
+    <Content Include="public\artist_0.jpg" />
     <Content Include="public\pictures\la-scapigliata-da-vinci.jpg" />
     <Content Include="public\pictures\mona-lisa-da-vinci.jpg" />
     <Content Include="public\pictures\ultima-cena-reproduccion.jpg" />

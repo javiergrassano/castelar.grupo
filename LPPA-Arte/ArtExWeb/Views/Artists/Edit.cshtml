@@ -1,11 +1,10 @@
 ﻿@model Artist
 
 @{
-    bool isNew = Model == null;
+    bool isNew = Model.id == 0;
     string imagenFile = $"../../public/artist_{Model.id}.jpg";
     string flagFile = $"../../public/flag_{Model.country}.png";
 }
-
 
 
 <section is="artistsSection">
@@ -15,14 +14,22 @@
 
 
             <div>
-                <span class="title">
-                    @{if (isNew)
-                        {<span>Creando Artista</span>}
+                <div class="title">
+                    @{
+                        if (isNew)
+                        {
+                            <span>Creando Artista</span>
+                        }
                         else
-                        {<h1>Editando Artista</h1>}
+                        {
+                            <span>Editando Artista</span>
+                        }
                     }
-                </span>
+                </div>
+                @if (!isNew)
+                {
                 <a class="boton_amarillo" href="/Artists/Edit/@Model.id">Editar</a>
+                }
             </div>
             <h2>@Html.DisplayFor(modelItem => Model.country) <img class="flag" src="@flagFile" /></h2>
 

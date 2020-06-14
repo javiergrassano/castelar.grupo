@@ -34,7 +34,7 @@ namespace ArtExWeb.Controllers
 
         public ActionResult Create()
         {
-            return View("Edit");
+            return View("Edit", new Artist());
         }
 
         [HttpPost]
