@@ -1,16 +1,14 @@
-﻿using System;
+﻿using ArtEx.BL.Exceptions;
+using ArtEx.EF;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ArtEx.BL.Exceptions;
-using ArtEx.EF;
 
 namespace ArtEx.BL
 {
-    
+
     public enum ProductOrderBy
     {
         title,

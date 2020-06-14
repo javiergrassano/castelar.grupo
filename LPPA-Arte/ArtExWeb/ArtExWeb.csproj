@@ -455,6 +455,10 @@
       <Project>{903b6cd9-b3f2-4b99-959f-b1d69ed13339}</Project>
       <Name>ArtEx.BL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ArtEx.Data\ArtEx.Data.csproj">
+      <Project>{8bd0ee15-f30b-4981-8e60-1529d76cde15}</Project>
+      <Name>ArtEx.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
