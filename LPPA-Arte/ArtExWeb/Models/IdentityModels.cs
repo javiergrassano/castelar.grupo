@@ -21,7 +21,7 @@ namespace ArtExWeb.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("ArtExDB", throwIfV1Schema: false)
         {
         }
 
