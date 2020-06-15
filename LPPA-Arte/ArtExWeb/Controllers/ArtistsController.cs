@@ -3,8 +3,10 @@ using ArtEx.EF;
 using ArtExWeb.Helpers;
 using System;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 
 namespace ArtExWeb.Controllers
@@ -37,20 +39,7 @@ namespace ArtExWeb.Controllers
             return View("Edit", new Artist());
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Artist artist)
-        {
-            if (ctx.IsValid(artist))
-            {
-                ctx.Update(artist);
-                return RedirectToAction("Index");
-            }
-            return View(artist);
-        }
-
-
-        public ActionResult Edit(int? id)
+         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -65,12 +54,25 @@ namespace ArtExWeb.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(Artist artist)
+        public ActionResult Update(Artist artist, HttpPostedFileBase newImage)
         {
             if (ctx.IsValid(artist))
             {
                 ctx.Update(artist);
+
+                try
+                {
+                    if (newImage.ContentLength > 0)
+                    {
+                        string _FileName = $"Artist_{artist.id}.jpg";
+                        string _path = Path.Combine(Server.MapPath("~/public"), _FileName);
+                        newImage.SaveAs(_path);
+                    }
+                }
+                catch
+                {
+                }
+
                 return RedirectToAction("Index");
             }
             return View(artist);
