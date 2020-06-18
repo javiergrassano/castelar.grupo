@@ -84,6 +84,7 @@ namespace ArtExWeb.Controllers
                     {
                         var fileName = Path.GetFileName(newImage.FileName);
                         string _path = Path.Combine(Server.MapPath("~/public"), fileName);
+
                         newImage.SaveAs(_path);
                     }
                 }
