@@ -2,7 +2,7 @@
 function CartTotal() {
     $.ajax({
         type: 'POST',
-        url: 'Cart/GetCartTotal',
+        url: '/Cart/GetCartTotal',
         success: function (result) {
             var cartTotal = $("#cart_count");
             if (cartTotal) {
@@ -10,6 +10,7 @@ function CartTotal() {
             }
         },
         error: function (result) {
+            console.log(JSON.stringify(result));
             //alert(JSON.stringify(result));
         }
     });
