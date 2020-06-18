@@ -69,8 +69,9 @@ namespace ArtExWeb.Controllers
                         newImage.SaveAs(_path);
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
+                    var pp = ex;
                 }
 
                 return RedirectToAction("Index");

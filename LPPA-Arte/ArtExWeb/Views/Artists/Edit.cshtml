@@ -11,28 +11,28 @@
     <div class="row content container">
 
         <div class="artistForm">
-
-
-            <div>
-                <div class="title">
-                    @{
-                        if (isNew)
-                        {
-                            <span>Creando Artista</span>
-                        }
-                        else
-                        {
-                            <span>Editando Artista</span>
-                        }
-                    }
-                </div>
-                <input type="submit" value="Save" class="boton_amarillo" />
-                @Html.ActionLink("Cancelar", "Index", new { @class = "boton_amarillo" })
-            </div>
-
-
             @using (Html.BeginForm("Update", "Artists", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
+
+                <div>
+                    <div class="title">
+                        @{
+                            if (isNew)
+                            {
+                                <span>Creando Artista</span>
+                            }
+                            else
+                            {
+                                <span>Editando Artista</span>
+                            }
+                        }
+                    </div>
+                    <input type="submit" value="Save" class="boton_amarillo" />
+                    @Html.ActionLink("Cancelar", "Index", new { @class = "boton_amarillo" })
+                </div>
+
+
+
                 <img id="photo" class="photo" src="@imagenFile" />
                 <div class="form">
 
