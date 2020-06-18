@@ -1,37 +1,38 @@
-﻿@model ArtEx.EF.Product
-
+﻿@model Product
 @{
-    ViewBag.Title = "Details";
+    string imagenFile = $"/public/pictures/{Model.image}";
 }
 
-<h2>Details</h2>
+<section is="artistsSection">
+    <div class="row content container">
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    @{
-        string imagenFile = $"public/pictures/{Model.image}";
-    }
-    <img class="photo" src="@imagenFile" />
-    <dl class="dl-horizontal">
-        <dt>Titulo</dt>
-        <dd>@Html.DisplayFor(model => model.title)</dd>
-        <dt>Artista</dt>
-        <dd>@Html.DisplayFor(model => model.artist.fullName)</dd>
+        <div class="artistForm">
+            
+            <div>
+                <span class="title">
+                    @Model.title <small>(@Model.artist.fullName)</small>
+                </span>
+                <a class="boton_amarillo" href="/Products/Edit/@Model.id">Editar</a>
+            </div>
+            <img class="photo" src="@imagenFile" />
+            <span class="">
+                <b>Descripcion:</b><br />
+                @Html.DisplayFor(model => model.description)
+            </span><br /><br />
+            <span class="">
+                <b>Precio:</b><br />
+                @Html.DisplayFor(model => model.price)
+            </span><br /><br />
+            <span class="">
+                <b>Cantidad vendida:</b><br />
+                @Html.DisplayFor(model => model.quantitySold)
+            </span><br /><br />
+                         <span class="">
+                             <b>Estrellas:</b><br />
+                             <img src="~/public/estrellas.png" />
+                         </span>
+        </div>
+    </div>
+</section>
 
-        <dt>Descripcion</dt>
-        <dd>@Html.DisplayFor(model => model.description)</dd>
 
-        <dt>Precio</dt>
-        <dd>@Html.DisplayFor(model => model.price)</dd>
-        <dt>Cantidad vendidas</dt>
-        <dd>@Html.DisplayFor(model => model.quantitySold)</dd>
-        <dt>Estrellas</dt>
-        <dd>@Html.DisplayFor(model => model.avgStars)</dd>
-    </dl>
-</div>
-
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -359,6 +359,7 @@
     <Content Include="public\artist_10.jpg" />
     <Content Include="public\artist_8.jpg" />
     <Content Include="public\artist_9.jpg" />
+    <Content Include="public\estrellas.png" />
     <Content Include="public\flag_.png" />
     <Content Include="public\flag_españa.png" />
     <Content Include="public\flag_francia.png" />
