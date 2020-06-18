@@ -4,7 +4,9 @@
 *Integrantes:*
 
 Hernan Cortes
+
 Javier Grassano
+
 Agustín Zalazar
 
 *Profesor:*
