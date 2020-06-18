@@ -1,8 +1,7 @@
-## ***Repositorio para la materia LPPA***
-**Trabajo Práctico Grupal**
+## ***Trabajo Práctico Grupal para la materia LPPA***
 
 
-*Integrantes:*
+**Integrantes:**
 
 Hernan Cortes
 
@@ -11,7 +10,7 @@ Javier Grassano
 Agustín Zalazar
 
 
-*Profesor:*
+**Profesor:**
 
 Víctor Contreras
 
