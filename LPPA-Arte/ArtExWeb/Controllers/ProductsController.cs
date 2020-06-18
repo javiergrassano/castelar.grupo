@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -72,11 +73,24 @@ namespace ArtExWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Product product)
+        public ActionResult Update(Product product , HttpPostedFileBase newImage)
         {
             if (ctx.IsValid(product))
             {
                 ctx.Update(product);
+                try
+                {
+                    if (newImage.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(newImage.FileName);
+                        string _path = Path.Combine(Server.MapPath("~/public"), fileName);
+                        newImage.SaveAs(_path);
+                    }
+                }
+                catch 
+                {
+
+                }
                 return RedirectToAction("Index");
             }
             ViewBag.artistId = new SelectList(ctx.listArtits(), "id", "fullName");
