@@ -2,11 +2,13 @@
 **Trabajo Práctico Grupal**
 
 *Integrantes:*
+
 Hernan Cortes
 Javier Grassano
 Agustín Zalazar
 
 *Profesor:*
+
 Víctor Contreras
 
 Universidad Abierta Interamericana
