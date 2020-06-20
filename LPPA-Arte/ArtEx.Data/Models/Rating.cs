@@ -6,8 +6,7 @@ namespace ArtEx.EF
     [Table("Rating")]
     public partial class Rating: GenericId
     {
-        [ForeignKey("user")]
-        public int userId { get; set; }
+        public string userId { get; set; }
 
         [ForeignKey("product")]
         public int productId { get; set; }
@@ -17,6 +16,5 @@ namespace ArtEx.EF
 
         public virtual Product product { get; set; }
 
-        public virtual User user { get; set; }
     }
 }

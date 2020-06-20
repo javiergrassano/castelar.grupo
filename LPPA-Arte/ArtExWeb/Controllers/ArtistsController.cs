@@ -62,7 +62,7 @@ namespace ArtExWeb.Controllers
 
                 try
                 {
-                    if (newImage.ContentLength > 0)
+                    if (newImage!= null && newImage.ContentLength > 0)
                     {
                         string _FileName = $"Artist_{artist.id}.jpg";
                         string _path = Path.Combine(Server.MapPath("~/public"), _FileName);

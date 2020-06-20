@@ -11,7 +11,7 @@ namespace ArtEx.EF
     {
         public User()
         {
-            orders = new List<Order>();
+            //orders = new List<Order>();
             ratings = new List<Rating>();
         }
 
@@ -37,7 +37,7 @@ namespace ArtEx.EF
 
         public int orderCount { get; set; }
 
-        public virtual List<Order> orders { get; set; }
+        //public virtual List<Order> orders { get; set; }
 
         public virtual List<Rating> ratings { get; set; }
     }

@@ -10,107 +10,116 @@ using ArtEx.EF;
 
 namespace ArtExWeb.Controllers
 {
-    public class CartsController : Controller
+    public class OrderDetailsController : Controller
     {
         private ArtExContext db = new ArtExContext();
 
-        // GET: Carts
+        // GET: OrderDetails
         public ActionResult Index()
         {
-            return View(db.Carts.ToList());
+            var orderDetails = db.OrderDetails.Include(o => o.product);
+            return View(orderDetails.ToList());
         }
 
-        // GET: Carts/Details/5
+        // GET: OrderDetails/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cart cart = db.Carts.Find(id);
-            if (cart == null)
+            OrderDetail orderDetail = db.OrderDetails.Find(id);
+            if (orderDetail == null)
             {
                 return HttpNotFound();
             }
-            return View(cart);
+            return View(orderDetail);
         }
 
-        // GET: Carts/Create
+        // GET: OrderDetails/Create
         public ActionResult Create()
         {
+            ViewBag.orderId = new SelectList(db.Orders, "id", "createdBy");
+            ViewBag.productId = new SelectList(db.Products, "id", "title");
             return View();
         }
 
-        // POST: Carts/Create
+        // POST: OrderDetails/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,cookie,cartDate,itemCount,createdOn,createdBy,changedOn,changedBy")] Cart cart)
+        public ActionResult Create([Bind(Include = "id,orderId,productId,price,quantity,createdOn,createdBy,changedOn,changedBy")] OrderDetail orderDetail)
         {
             if (ModelState.IsValid)
             {
-                db.Carts.Add(cart);
+                db.OrderDetails.Add(orderDetail);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(cart);
+            ViewBag.orderId = new SelectList(db.Orders, "id", "createdBy", orderDetail.orderId);
+            ViewBag.productId = new SelectList(db.Products, "id", "title", orderDetail.productId);
+            return View(orderDetail);
         }
 
-        // GET: Carts/Edit/5
+        // GET: OrderDetails/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cart cart = db.Carts.Find(id);
-            if (cart == null)
+            OrderDetail orderDetail = db.OrderDetails.Find(id);
+            if (orderDetail == null)
             {
                 return HttpNotFound();
             }
-            return View(cart);
+            ViewBag.orderId = new SelectList(db.Orders, "id", "createdBy", orderDetail.orderId);
+            ViewBag.productId = new SelectList(db.Products, "id", "title", orderDetail.productId);
+            return View(orderDetail);
         }
 
-        // POST: Carts/Edit/5
+        // POST: OrderDetails/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,cookie,cartDate,itemCount,createdOn,createdBy,changedOn,changedBy")] Cart cart)
+        public ActionResult Edit([Bind(Include = "id,orderId,productId,price,quantity,createdOn,createdBy,changedOn,changedBy")] OrderDetail orderDetail)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cart).State = EntityState.Modified;
+                db.Entry(orderDetail).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cart);
+            ViewBag.orderId = new SelectList(db.Orders, "id", "createdBy", orderDetail.orderId);
+            ViewBag.productId = new SelectList(db.Products, "id", "title", orderDetail.productId);
+            return View(orderDetail);
         }
 
-        // GET: Carts/Delete/5
+        // GET: OrderDetails/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cart cart = db.Carts.Find(id);
-            if (cart == null)
+            OrderDetail orderDetail = db.OrderDetails.Find(id);
+            if (orderDetail == null)
             {
                 return HttpNotFound();
             }
-            return View(cart);
+            return View(orderDetail);
         }
 
-        // POST: Carts/Delete/5
+        // POST: OrderDetails/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Cart cart = db.Carts.Find(id);
-            db.Carts.Remove(cart);
+            OrderDetail orderDetail = db.OrderDetails.Find(id);
+            db.OrderDetails.Remove(orderDetail);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

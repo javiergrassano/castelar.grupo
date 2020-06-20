@@ -17,7 +17,7 @@ namespace ArtExWeb.Controllers
         // GET: Ratings
         public ActionResult Index()
         {
-            var ratings = db.Ratings.Include(r => r.product).Include(r => r.user);
+            var ratings = db.Ratings.Include(r => r.product);
             return View(ratings.ToList());
         }
 

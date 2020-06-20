@@ -77,40 +77,5 @@ namespace ArtEx.BL
             return item;
         }
 
-        /// <summary>
-        /// Cierra el carrito de la cookie solicitada, genera la compra y borra el carrito
-        /// </summary>
-        /// <param name="cookie"></param>
-        public void CloseCart(string cookie)
-        {
-            Cart cart = GetCart(cookie);
-            if (cart.items == null || cart.items.Count == 0)
-                throw new Exception("No hay items cargados");
-
-            //TODO: Falta poner el contador de ordenes
-
-            Order order = new Order();
-            order.orderDate = DateTime.Now;
-            order.orderNumber = 0;
-            foreach (var cartItem in cart.items)
-            {
-                OrderDetail orderDetail = new OrderDetail();
-                orderDetail.productId = cartItem.productId;
-                orderDetail.quantity = cartItem.quantity;
-                orderDetail.price = cartItem.price;
-
-                order.itemCount++;
-                order.totalPrice += orderDetail.total;
-
-                Audit(orderDetail);
-                order.orderDetails.Add(orderDetail);
-            }
-            db.Orders.Add(order);
-            db.SaveChanges();
-
-            // Borra el carrito
-            db.Carts.Remove(cart);
-        }
-
     }
 }

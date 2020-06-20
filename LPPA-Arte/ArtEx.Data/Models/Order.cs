@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace ArtEx.EF
 {
@@ -10,11 +11,10 @@ namespace ArtEx.EF
     {
         public Order()
         {
-            orderDetails = new List<OrderDetail>();
+            items = new List<OrderDetail>();
         }
 
-        [ForeignKey("user")]
-        public int userId { get; set; }
+        public string userId { get; set; }
 
         public DateTime orderDate { get; set; }
 
@@ -24,8 +24,11 @@ namespace ArtEx.EF
 
         public int itemCount { get; set; }
 
-        public virtual User user { get; set; }
+        public virtual List<OrderDetail> items { get; set; }
 
-        public virtual List<OrderDetail> orderDetails { get; set; }
+        public double total { get => items.Sum(x=>x.total); }
+
+
     }
+
 }
