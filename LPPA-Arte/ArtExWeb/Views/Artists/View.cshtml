@@ -2,6 +2,7 @@
 @{
     string imagenFile = $"../../public/artist_{Model.id}.jpg";
     string flagFile = $"../../public/flag_{Model.country}.png";
+    bool isAdmin = User.IsInRole("Admin");
 }
 
     <section is="artistsSection">
@@ -12,10 +13,15 @@
                     <span class="title">
                         @Model.lastName, @Model.firstName <small>(@Model.lifeSpan)</small>
                     </span>
-                    <a class="boton_amarillo" href="/Artists/Edit/@Model.id">Editar</a>
+                    @if (isAdmin)
+                    {
+                        <a class="boton_amarillo" href="/Artists/Edit/@Model.id">Editar</a>
+                    }
                 </div>
+                    
                 <h2>@Html.DisplayFor(modelItem => Model.country) <img class="flag" src="@flagFile" /></h2>
                 
+
                 <img class="photo" src="@imagenFile" />
                 
                 <span class="">

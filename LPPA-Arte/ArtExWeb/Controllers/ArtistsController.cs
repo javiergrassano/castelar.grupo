@@ -3,6 +3,7 @@ using ArtEx.EF;
 using ArtExWeb.Helpers;
 using System;
 using System.Data.Entity;
+using System.EnterpriseServices;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -34,12 +35,14 @@ namespace ArtExWeb.Controllers
             return View(artist);
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View("Edit", new Artist());
         }
 
-         public ActionResult Edit(int? id)
+        [Authorize(Roles ="Admin")]
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -54,6 +57,7 @@ namespace ArtExWeb.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult Update(Artist artist, HttpPostedFileBase newImage)
         {
             if (ctx.IsValid(artist))

@@ -1,13 +1,18 @@
 ﻿@model IEnumerable<ArtEx.EF.Artist>
 
-
+@{ 
+    bool isAdmin = User.IsInRole("Admin");
+}
 
     <section is="artistsSection">
         <div class="row content container">
                 <h1>Los Artistas</h1>
+            @if (isAdmin)
+            {
                 <p>
                     @Html.ActionLink("Crear Nuevo", "Create", null, null, new { @class = "boton_amarillo" })
                 </p>
+            }
             <div class="content-cards">
                 @foreach (var item in Model)
                 {
