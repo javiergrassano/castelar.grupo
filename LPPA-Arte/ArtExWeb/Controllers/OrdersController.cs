@@ -18,25 +18,27 @@ namespace ArtExWeb.Controllers
         private SessionContext ctx;
         public OrdersController()
         {
-            string id = User?.Identity?.GetUserId() ?? "";
-            ctx = new SessionContext(id);
+            //string id = User?.Identity?.GetUserId() ?? "";
+            //ctx = new SessionContext(id);
         }
 
         // GET: Orders/Create
         public ActionResult Create()
         {
+            string id = User?.Identity?.GetUserId() ?? "";
+            ctx = new SessionContext(id);
+
             Order order = ctx.CloseCart(cookie);
             return View(order);
         }
 
-
-
-        //// GET: Orders
-        //public ActionResult Index()
-        //{
-        //    var orders = db.Orders.Include(o => o.user);
-        //    return View(orders.ToList());
-        //}
+        public ActionResult List()
+        {
+            string id = User?.Identity?.GetUserId() ?? "";
+            ctx = new SessionContext(id);
+            var orders = ctx.GetOrders();
+            return View(orders.ToList());
+        }
 
         //// GET: Orders/Details/5
         //public ActionResult Details(int? id)

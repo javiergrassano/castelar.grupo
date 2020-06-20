@@ -74,6 +74,15 @@ namespace ArtEx.BL
 
         }
 
+        public List<Order> GetOrders()
+        {
+            List<Order> orders = db.Orders
+                                        .Include(x => x.items)
+                                        .Where(x => x.userId == currentUserId)
+                                        .ToList();
+            return orders;
 
+
+        }
     }
 }

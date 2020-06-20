@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ArtEx.EF.Order>
+
+<section is="artistsSection">
+    <div class="row content container">
+        <h1>Mis compras</h1>
+        <div class="carrito-container">
+            <table class="table">
+                <tr>
+                    <th>
+                        Fecha
+                    </th>
+                    <th>
+                        Numero de Orden
+                    </th>
+                    <th>
+                        Total de items
+                    </th>
+                    <th>
+                        Total
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.orderDate.ToShortDateString()
+                        </td>
+                        <td>
+                            @item.orderNumber.ToString("000000")
+                        </td>
+                        <td>
+                            @item.itemCount
+                        </td>
+                        <td>
+                            @item.totalPrice.ToString("n2")
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+
+</section>
