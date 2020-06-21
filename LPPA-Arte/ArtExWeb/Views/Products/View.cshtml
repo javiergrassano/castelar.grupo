@@ -14,21 +14,22 @@
                 </span>
                 <a class="boton_amarillo" href="/Products/Edit/@Model.id">Editar</a>
             </div>
+            <br />
             <img class="photo" src="@imagenFile" />
             <span class="">
-                <b>Descripcion:</b><br />
+                <strong class="bold">Descripción:</strong><br />
                 @Html.DisplayFor(model => model.description)
             </span><br /><br />
             <span class="">
-                <b>Precio:</b><br />
+                <strong class="bold">Precio:</strong><br />
                 @Html.DisplayFor(model => model.price)
             </span><br /><br />
             <span class="">
-                <b>Cantidad vendida:</b><br />
+                <strong class="bold">Cantidad vendida:</strong><br />
                 @Html.DisplayFor(model => model.quantitySold)
             </span><br /><br />
                          <span class="">
-                             <b>Estrellas:</b><br />
+                             <strong class="bold">Estrellas:</strong><br />
                              <img src="~/public/estrellas.png" />
                          </span>
         </div>

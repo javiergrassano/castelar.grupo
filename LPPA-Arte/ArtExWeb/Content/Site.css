@@ -27,7 +27,7 @@
 .artistForm {
     /*border: 1px solid #808080;*/
     margin-top: 20px;
-    cursor: pointer;
+    //cursor: pointer;
     width: 100%;
     padding: 20px;
     box-shadow: 0 7px 7px #888888;
@@ -58,6 +58,10 @@
         width:100%;
     }
 
+.bold {
+    font-weight: bold;
+    font-size:x-large;
+}
 
 .accesoForm {
     margin-top: 20px;
