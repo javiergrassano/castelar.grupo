@@ -12,7 +12,8 @@
                 <div>
                     <span class="title">
                         @Model.lastName, @Model.firstName <small>(@Model.lifeSpan)</small>
-                    </span><a class="boton_amarillo" href="/Artists">Volver a Artistas</a>
+                    </span>
+                    <a class="boton_amarillo" href="/Artists">Volver a Artistas</a>
                     @if (isAdmin)
                     {
                         <a class="boton_amarillo" href="/Artists/Edit/@Model.id">Editar</a>
