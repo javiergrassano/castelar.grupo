@@ -35,6 +35,10 @@
     background: url("https://img.icons8.com/ios/64/000000/delete-sign.png") no-repeat center;
 }
 
+    .btn-delete:hover {
+        transform: scale(1.1);
+    }
+
 .carrito-imagen {
     margin-right: 50px;
 }
@@ -47,6 +51,10 @@
 
     .carrito-imagen img:hover {
         transform: scale(1.1);
+        transition-duration: .3s;
+    }
+
+    .carrito-imagen img:hover {
         transition-duration: .3s;
     }
 

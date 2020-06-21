@@ -102,6 +102,7 @@ nav {
 body {
     margin: 0px;
     height: 100%;
+    width: 100%;
     color: #404040;
     background: #FFFFFF;
     font-family: "PlayFair Display", "Cardo", serif;
@@ -130,6 +131,7 @@ p {
 
 .content {
     padding: 10px 2% 3%;
+    min-height:493px;
 }
 
 footer {
@@ -147,6 +149,7 @@ footer {
     text-align: center;
     height: 70px;
     box-shadow: 0 -5px 5px #888888;
+    bottom: 0;
 }
 
 #logoCarrito {

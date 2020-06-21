@@ -90,6 +90,10 @@ galeria-h1 {
     opacity: .3;
 }
 
+.galeria-container img {
+    transition-duration: .3s;
+}
+
 .galeria-container:hover span {
     color: black;
     display: block;

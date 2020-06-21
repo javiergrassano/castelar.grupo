@@ -1,9 +1,10 @@
 ﻿.footer {
+    clear: both;
     position: relative;
     float: none;
-    clear: both;
     background-color: #2f2f2f;
     height: 400px;
+    margin-top: -400px;
     padding: 5px 0;
 }
 

@@ -99,8 +99,14 @@
 }
 
 .artistCard:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     transition-duration: .3s;
+    opacity: 1;
+}
+
+.artistCard {
+    transition-duration: .3s;
+    opacity: .9;
     /*filter: grayscale(50%);
     opacity: .3;*/
 }
