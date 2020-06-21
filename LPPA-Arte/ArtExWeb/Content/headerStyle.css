@@ -1,18 +1,19 @@
 ﻿.menu {
     z-index: 999;
-    height: 70px;
+    height: 90px;
     width: 100%;
     padding-top: 4px;
     padding-bottom: 6px;
     background-color: #51514a;
     font-family: "PlayFair Display", "Montserrat", sans-serif;
     box-shadow: 0 5px 5px #888888;
+    position: fixed;
 }
 
 .menuMini {
     position: fixed;
     z-index: 999;
-    height: 40px;
+    height: 60px;
     padding-top: 7px;
     padding-bottom: 3px;
 }
@@ -130,8 +131,8 @@ p {
 }
 
 .content {
-    padding: 10px 2% 3%;
-    min-height:493px;
+    padding: 90px 2% 3%;
+    min-height:570px;
 }
 
 footer {
