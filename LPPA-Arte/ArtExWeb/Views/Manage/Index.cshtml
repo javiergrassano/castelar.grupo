@@ -1,27 +1,24 @@
 ﻿@model ArtExWeb.Models.IndexViewModel
 
-<h2>Cuenta</h2>
+    <div class="row content container">
+        <h1>Mi Perfil</h1>
+        <div class="accesoForm">
 
-<p class="text-success">@ViewBag.StatusMessage</p>
-<div>
-    <h4>Mi perfil</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dr>Usuario</dr>
-        <dd>@User.Identity.Name</dd>
-        <dt>Contraseña:</dt>
-        <dd>
-            [
-            @if (Model.HasPassword)
-            {
-                @Html.ActionLink("Cambiar contraseña", "ChangePassword")
-            }
-            else
-            {
-                @Html.ActionLink("Create", "SetPassword")
-            }
-            ]
-        </dd>
-       
-    </dl>
-</div>
+            <p class="text-success">@ViewBag.StatusMessage</p>
+            <div>
+                    <strong class="bold">Usuario</strong><br />
+                    @User.Identity.Name<br />
+                    <strong class="bold">Contraseña:</strong><br />
+                    <div>
+                        @if (Model.HasPassword)
+                        {
+                            @Html.ActionLink("Cambiar contraseña", "ChangePassword", null, null, new { @class = "boton_amarillo" })
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Create", "SetPassword", null, null, new { @class = "boton_amarillo" })
+                        }
+                    </div>
+            </div>
+        </div>
+    </div>
