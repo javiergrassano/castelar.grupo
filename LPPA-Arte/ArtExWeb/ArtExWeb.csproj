@@ -369,6 +369,7 @@
     <Content Include="public\artist_0.jpg" />
     <Content Include="public\pictures\la-scapigliata-da-vinci.jpg" />
     <Content Include="public\pictures\mona-lisa-da-vinci.jpg" />
+    <Content Include="public\pictures\parthenon.jpg" />
     <Content Include="public\pictures\ultima-cena-reproduccion.jpg" />
     <Content Include="public\pictures\virgen-huso-leonardo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
