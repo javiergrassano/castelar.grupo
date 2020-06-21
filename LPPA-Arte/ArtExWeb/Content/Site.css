@@ -59,7 +59,18 @@
     }
 
 
-
+.accesoForm {
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 7px 7px #888888;
+    border-radius: 6px;
+    background: #f6f3e6;
+    min-height: 320px;
+    text-align: center;
+    line-height: 2;
+}
 
 .productCard {
     border: 1px solid #808080;

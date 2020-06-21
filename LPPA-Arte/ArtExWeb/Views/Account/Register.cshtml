@@ -4,31 +4,34 @@
 
     <section id="loginForm">
         <div class="row content container">
-
-            <div class="artistForm">
+            <h1>Crear nuevo usuario</h1>
+            <div class="accesoForm">
+                <!--
                 <span class="title">
                     Crear una nueva cuenta
                 </span>
-
+                    <hr />
+                -->
                 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
                     @Html.AntiForgeryToken()
-                    <hr />
+                    
                     @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div>
+                    <label>Email</label><br />
+                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "Ingrese su email" })
+                </div>
+                <div>
+                    <label>Contraseña</label><br />
+                    @Html.PasswordFor(m => m.Password, new { @placeholder = "Ingrese su contraseña" })
+                </div>
+                <div>
+                    <label>Confirmar contraseña</label><br />
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" , @placeholder = "Confirme su contraseña" })
+                </div>
                     <div>
-                        <label>Email</label>
-                        @Html.TextBoxFor(m => m.Email)
-                    </div>
-                    <div>
-                        <label>Contraseña</label>
-                        @Html.PasswordFor(m => m.Password)
-                    </div>
-                    <div>
-                        <label>Confirmar contraseña</label>
-                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-                    </div>
-                    <div>
-                        <input type="submit" class="boton_amarillo" value="Registrar" />
+                        <br />
+                        <input type="submit" value="Registrar" />
                     </div>
                 }
 
