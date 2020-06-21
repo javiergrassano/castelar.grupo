@@ -65,7 +65,7 @@
 
 .accesoForm {
     margin-top: 20px;
-    cursor: pointer;
+    //cursor: pointer;
     width: 100%;
     padding: 20px;
     box-shadow: 0 7px 7px #888888;
@@ -75,6 +75,23 @@
     text-align: center;
     line-height: 2;
 }
+
+    .accesoForm table  {
+        margin: 0 auto;
+        border-collapse: separate;
+        //border: 1px solid #000;
+        border-radius: 6px;
+        -moz-border-radius: 6px;
+        //border-spacing: 0;
+        //padding: 0.5em 1em;
+        
+    }
+
+    .accesoForm th, td {
+        border: solid #888888 1px;
+        border-radius: 6px;
+        background-color: #ffffff;
+    }
 
 .productCard {
     border: 1px solid #808080;
