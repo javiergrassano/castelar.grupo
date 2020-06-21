@@ -12,7 +12,7 @@
                 <div>
                     <span class="title">
                         @Model.lastName, @Model.firstName <small>(@Model.lifeSpan)</small>
-                    </span>
+                    </span><a class="boton_amarillo" href="/Artists">Volver a Artistas</a>
                     @if (isAdmin)
                     {
                         <a class="boton_amarillo" href="/Artists/Edit/@Model.id">Editar</a>
@@ -25,7 +25,7 @@
                 <img class="photo" src="@imagenFile" />
                 
                 <span class="">
-                    <b>Descripcion:</b><br/>
+                    <h2><b>Descripción:</b></h2><br/>
                     @Html.DisplayFor(model => model.description)
                 </span>
             </div>

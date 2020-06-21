@@ -33,6 +33,7 @@
     box-shadow: 0 7px 7px #888888;
     border-radius: 6px;
     background: #f6f3e6;
+    min-height: 550px;
 }
     .artistForm .title{
         margin:0;
@@ -48,6 +49,7 @@
         float: left;
         width: 300px;
         margin: 0 30px 0 0;
+        border-radius: 6px;
     }
 
     .artistForm .detail {
