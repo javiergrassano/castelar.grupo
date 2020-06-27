@@ -53,6 +53,20 @@ namespace ArtEx.BL
             return order;
         }
 
+        public Order Update(Order order)
+        {
+            order.orderNumber = GetLastOrderNumber();
+            order.userId = currentUserId;
+            foreach (var item in order.items)
+            {
+                Audit(item);
+            }
+            Audit(order);
+            db.Orders.Add(order);
+            db.SaveChanges();
+            return order;
+        }
+
         /// <summary>
         /// Devuelve el proximo nuemro de orden
         /// </summary>

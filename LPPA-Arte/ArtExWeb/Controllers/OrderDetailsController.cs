@@ -10,9 +10,8 @@ using ArtEx.EF;
 
 namespace ArtExWeb.Controllers
 {
-    public class OrderDetailsController : Controller
+    public class OrderDetailsController : BaseController
     {
-        private ArtExContext db = new ArtExContext();
 
         // GET: OrderDetails
         public ActionResult Index()
@@ -124,13 +123,5 @@ namespace ArtExWeb.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
     }
 }

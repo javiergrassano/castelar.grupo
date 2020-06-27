@@ -10,9 +10,9 @@ using ArtEx.EF;
 
 namespace ArtExWeb.Controllers
 {
-    public class RatingsController : Controller
+    public class RatingsController : BaseController
     {
-        private ArtExContext db = new ArtExContext();
+ 
 
         // GET: Ratings
         public ActionResult Index()

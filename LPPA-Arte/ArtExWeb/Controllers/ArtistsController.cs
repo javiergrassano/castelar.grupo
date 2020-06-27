@@ -12,10 +12,8 @@ using System.Web.Mvc;
 
 namespace ArtExWeb.Controllers
 {
-    public class ArtistsController : Controller
+    public class ArtistsController : BaseController
     {
-        private SessionContext ctx = new SessionContext();
-
         public ActionResult Index(string search, int page = 0, int orderBy = 0)
         {
             return View(ctx.listArtits(search, page, 15, (ArtitsOrderBy)orderBy));
@@ -41,7 +39,7 @@ namespace ArtExWeb.Controllers
             return View("Edit", new Artist());
         }
 
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -53,7 +51,7 @@ namespace ArtExWeb.Controllers
             {
                 return HttpNotFound();
             }
-            return View("Edit",artist);
+            return View("Edit", artist);
         }
 
         [HttpPost]
@@ -66,14 +64,14 @@ namespace ArtExWeb.Controllers
 
                 try
                 {
-                    if (newImage!= null && newImage.ContentLength > 0)
+                    if (newImage != null && newImage.ContentLength > 0)
                     {
                         string _FileName = $"Artist_{artist.id}.jpg";
                         string _path = Path.Combine(Server.MapPath("~/public"), _FileName);
                         newImage.SaveAs(_path);
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     var pp = ex;
                 }
@@ -81,15 +79,6 @@ namespace ArtExWeb.Controllers
                 return RedirectToAction("Index");
             }
             return View(artist);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                ctx = null;
-            }
-            base.Dispose(disposing);
         }
     }
 }

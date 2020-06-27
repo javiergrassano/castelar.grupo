@@ -324,7 +324,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CookieController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ArtistsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -372,6 +372,12 @@
     <Content Include="public\pictures\parthenon.jpg" />
     <Content Include="public\pictures\ultima-cena-reproduccion.jpg" />
     <Content Include="public\pictures\virgen-huso-leonardo.jpg" />
+    <Content Include="public\star0.png" />
+    <Content Include="public\star1.png" />
+    <Content Include="public\star2.png" />
+    <Content Include="public\star3.png" />
+    <Content Include="public\star4.png" />
+    <Content Include="public\star5.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\FTP Server.pubxml" />
@@ -398,8 +404,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />

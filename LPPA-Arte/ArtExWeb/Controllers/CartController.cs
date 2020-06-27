@@ -13,10 +13,8 @@ using System.Xml.XPath;
 
 namespace ArtExWeb.Controllers
 {
-    public class CartController : CookieController
+    public class CartController : BaseController
     {
-        private SessionContext ctx = new SessionContext();
-
         public ActionResult Index()
         {
             Cart cart = ctx.GetCart(cookie);
@@ -80,18 +78,6 @@ namespace ArtExWeb.Controllers
             //TODO: Crear un objeto de retorno para los JSON con status http
             return Json("ok");
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                ctx = null;
-            }
-            base.Dispose(disposing);
-        }
-
-
-
 
     }
 }

@@ -1,11 +1,28 @@
-﻿using System;
+﻿using ArtEx.EF;
+using ArtExWeb.Helpers;
+using System;
 using System.Web;
 using System.Web.Mvc;
 
 namespace ArtExWeb.Controllers
 {
-    public abstract class CookieController : Controller
+    public abstract class BaseController : Controller
     {
+        internal SessionContext ctx = new SessionContext();
+        internal ArtExContext db = new ArtExContext();
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ctx = null;
+            }
+            base.Dispose(disposing);
+        }
+
+
+        #region Manejo de cookies
+
         protected string cookie { get => getCookie(); }
 
         private string getCookie()
@@ -25,6 +42,8 @@ namespace ArtExWeb.Controllers
             }
             return cookieId;
         }
+
+        #endregion Manejo de cookies
 
     }
 }

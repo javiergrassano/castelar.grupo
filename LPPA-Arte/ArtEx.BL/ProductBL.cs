@@ -13,11 +13,12 @@ namespace ArtEx.BL
     {
         title,
         artist,
-        rating
+        rating,
+        quantitySold
     }
     public partial class BusinessContext
-    {   
-        public List<Product> ListProducts(string search, int currentPage = 0,int totalPerPage = 0, ProductOrderBy orderBy = ProductOrderBy.title)
+    {
+        public List<Product> ListProducts(string search = "", int currentPage = 0, int totalPerPage = 0, ProductOrderBy orderBy = ProductOrderBy.title)
         {
             IQueryable<Product> rows = db.Products.Include(x => x.artist);
             if (!string.IsNullOrWhiteSpace(search))
@@ -25,13 +26,32 @@ namespace ArtEx.BL
 
             switch (orderBy)
             {
-                default: rows = rows.OrderBy(x => x.title);
+                case ProductOrderBy.rating:
+                    rows = rows.OrderByDescending(x => x.avgStars);
                     break;
+                case ProductOrderBy.quantitySold:
+                    rows = rows.OrderByDescending(x => x.quantitySold);
+                    break;
+                default:
+                    rows = rows.OrderBy(x => x.title);
+                    break;
+
             }
             if (totalPerPage > 0)
                 rows = rows.Skip(totalPerPage * currentPage).Take(totalPerPage);
-            return rows.ToList();
+
+            List<Product> result = null;
+            try
+            {
+                result = rows.ToList();
+            }
+            catch(Exception ex)
+            {
+                result = null;
+            }
+            return result;
         }
+
         public Product findProduct(int id)
         {
             return db.Products.Include(x => x.artist).Where(x => x.id == id).FirstOrDefault();

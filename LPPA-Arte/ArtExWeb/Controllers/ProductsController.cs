@@ -13,9 +13,8 @@ using ArtExWeb.Helpers;
 
 namespace ArtExWeb.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductsController : BaseController
     {
-        private SessionContext ctx = new SessionContext();
 
         public ActionResult Index(string search, int page = 0, int orderBy = 0)
         {
@@ -96,15 +95,6 @@ namespace ArtExWeb.Controllers
             }
             ViewBag.artistId = new SelectList(ctx.listArtits(), "id", "fullName");
             return View(product);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                ctx = null;
-            }
-            base.Dispose(disposing);
         }
 
     }
