@@ -25,55 +25,9 @@
     <div class="row content">
         <h1>Productos más vendidos</h1>
 
-        <div class="carrito-container">
-
-            @{int counter1 = 1; }
-            @foreach (Product item in mostSelled)
-            {
-                imagenFile = $"public/pictures/{item.image}";
-                <div style="padding: 10px 30px 110px 50px;" class="carrito-item" onclick="AddProduct(@item.id,1)">
-
-                    <div style="font-size:60px;position:relative;text-align:center;" class="carrito-imagen">
-                        <div style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -20%);" class="colorDorado">
-                            @counter1
-                            @{counter1++;}
-                        </div>
-                    </div>
-                    <div class="carrito-imagen">
-                        <img style="width:100px;height:100px; border-bottom: 40px; margin-bottom: 40px;" src="@imagenFile" />
-                    </div>
-
-                    <div class="carrito-descripcion">
-                        <span style="font-size:25px;">
-                            @item.title
-                        </span>
-                        <!--
-                        <span>
-                            @item.artist.fullName
-                        </span>
-                        <span>
-                            $@item.price
-                        </span>
-                        -->
-                        <span style="font-size:20px; color: yellow; text-shadow: 1px 1px #808080;">
-                            @item.quantitySold Ventas
-                        </span>
-                    </div>
-
-
-                </div>
-            }
-        </div>
-    </div>
-</section>
-
-<section id="sec01b">
-    <div class="row content">
-        <h1>Productos más vendidos</h1>
-
         <div class="content-cards">
 
-            @{int counter1b = 1; }
+            @{int counter1 = 1; }
             @foreach (Product item in mostSelled)
             {
                 imagenFile = $"public/pictures/{item.image}";
@@ -82,8 +36,8 @@
 
                     <div style="font-size:60px;position:relative;text-align:center;" class="photo artistPhoto">
                         <div style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -20%);" class="">
-                            @counter1b
-                            @{counter1b++;}
+                            @counter1
+                            @{counter1++;}
                         </div>
                     </div>
                     <div style="margin-top:70px;">
@@ -119,27 +73,28 @@
     <div class="row content">
         <h1>Productos mejor rankeados</h1>
 
-        <div class="carrito-container">
+        <div class="content-cards">
 
             @{int counter2 = 1; }
             @foreach (Product item in bestRanked)
             {
                 imagenFile = $"public/pictures/{item.image}";
                 string star = $"public/star{item.avgStars.ToString("n0")}.png";
-                <div style="padding: 10px 30px 110px 50px;" class="carrito-item" onclick="AddProduct(@item.id,1)">
+                <div class="artistCard" style="background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);" onclick="AddProduct(@item.id,1)">
 
-                    <div style="font-size:60px;position:relative;text-align:center;" class="carrito-imagen">
-                        <div class="colorDorado">
+                    <div style="font-size:60px;position:relative;text-align:center;" class="photo artistPhoto">
+                        <div style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -20%);" class="">
                             @counter2
                             @{counter2++;}
                         </div>
                     </div>
-                    <div class="carrito-imagen">
-                        <img style="width:100px;height:100px; border-bottom: 40px; margin-bottom: 40px;" src="@imagenFile" />
+                    <div style="margin-top:70px;">
+                        <img style="height:100px;border: 1px solid white;" class="photo artistPhoto" src="@imagenFile" />
                     </div>
 
-                    <div class="carrito-descripcion">
-                        <span style="font-size:25px;">
+                    <div class="name">
+                        <span style="font-size:25px; color:black;">
                             @item.title
                         </span>
                         <!--
