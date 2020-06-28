@@ -19,6 +19,11 @@
                     <div class="artistCard" onclick="window.location.href = '@Url.Action("View", "Artists", new { id = item.id })';">
                         @{
                             string imagenFile = $"public/artist_{item.id}.jpg";
+                            if (!File.Exists(Server.MapPath(imagenFile)))
+                            {
+                                imagenFile = $"public/artist_0.jpg";
+                            }
+
                             string flagFile = $"public/flag_{item.country}.png";
                         }
                         <img class="photo artistPhoto" src="@imagenFile" />
