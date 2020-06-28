@@ -11,8 +11,8 @@ namespace ArtExWeb.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.mostSelled = ctx.ListProducts(orderBy: ProductOrderBy.quantitySold).Take(3);
-            ViewBag.bestRanked = ctx.ListProducts(orderBy: ProductOrderBy.rating).Take(3);
+            ViewBag.mostSelled = ctx.ListProducts(orderBy: ProductOrderBy.quantitySold).Take(4);
+            ViewBag.bestRanked = ctx.ListProducts(orderBy: ProductOrderBy.rating).Take(4);
             return View();
         }
 
