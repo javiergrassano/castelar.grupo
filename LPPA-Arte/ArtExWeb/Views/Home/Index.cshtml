@@ -11,84 +11,93 @@
 </div>
 
 <section id="sec00">
+    <div class="row content">
+        <h1>Productos más vendidos</h1>
 
-    <div class="carrito-container">
+        <div class="carrito-container">
 
-        <div class="carrito-titulo">
-            Productos mas vendidos
-        </div>
+            @{int counter1 = 1; }
+            @foreach (Product item in mostSelled)
+            {
+                imagenFile = $"public/pictures/{item.image}";
+                <div class="carrito-item" onclick="AddProduct(@item.id,1)">
 
-        @foreach (Product item in mostSelled)
-        {
-            imagenFile = $"public/pictures/{item.image}";
-    <div class="carrito-item" onclick="AddProduct(@item.id,1)">
+                    <div style="font-size:45px;"class="carrito-imagen colorDorado">
+                        @counter1
+                        @{counter1++;}
+                    </div>
+                    <div class="carrito-imagen">
+                        <img src="@imagenFile" />
+                    </div>
 
-        <div class="carrito-imagen">
-            <img src="@imagenFile"/>
-        </div>
-
-        <div class="carrito-descripcion">
-            <span>
-                @item.title
-            </span>
-            <span>
-                @item.artist.fullName
-            </span>
-            <span>
-                $@item.price
-            </span>
-            <span>
-                @item.quantitySold Ventas
-            </span>
-        </div>
+                    <div class="carrito-descripcion">
+                        <span>
+                            @item.title
+                        </span>
+                        <span>
+                            @item.artist.fullName
+                        </span>
+                        <span>
+                            $@item.price
+                        </span>
+                        <span>
+                            @item.quantitySold Ventas
+                        </span>
+                    </div>
 
 
-    </div>
-        }
-
-    </div>
-
-    <div class="carrito-container">
-
-        <div class="carrito-titulo">
-            Productos mejor rankeados
-        </div>
-
-        @foreach (Product item in bestRanked)
-        {
-            imagenFile = $"public/pictures/{item.image}";
-            string star = $"public/star{item.avgStars.ToString("n0")}.png";
-            <div class="carrito-item" onclick="AddProduct(@item.id,1)">
-
-                <div class="carrito-imagen">
-                    <img src="@imagenFile"/>
                 </div>
-
-                <div class="carrito-descripcion">
-                    <span>
-                        @item.title
-                    </span>
-                    <span>
-                        @item.artist.fullName
-                    </span>
-                    <span>
-                        $@item.price
-                    </span>
-                    <span>
-                        <img src="@star" />
-                    </span>
-                </div>
-
-            </div>
-        }
-
+            }
+        </div>
     </div>
-
 </section>
 
 <section id="sec01">
     <div class="row content">
-        <h1>Presentación</h1>
+        <h1>Productos mejor rankeados</h1>
+
+        <div class="carrito-container">
+
+            @{int counter2 = 1; }
+            @foreach (Product item in bestRanked)
+            {
+                imagenFile = $"public/pictures/{item.image}";
+                string star = $"public/star{item.avgStars.ToString("n0")}.png";
+                <div class="carrito-item" onclick="AddProduct(@item.id,1)">
+
+                    <div style="font-size:45px;"class="carrito-imagen colorDorado">
+                        @counter2
+                        @{counter2++;}
+                    </div>
+                    <div class="carrito-imagen">
+                        <img src="@imagenFile" />
+                    </div>
+                    
+                    <div class="carrito-descripcion">
+                        <span>
+                            @item.title
+                        </span>
+                        <span>
+                            @item.artist.fullName
+                        </span>
+                        <span>
+                            $@item.price
+                        </span>
+                        <span>
+                            <img src="@star" />
+                        </span>
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+
+<section id="sec02">
+    <div class="row content">
+        <h1>Sobre Nosotros</h1>
         <h3>
             Proyecto Web: Galería de Arte
         </h3>
