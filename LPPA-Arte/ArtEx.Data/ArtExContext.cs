@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
+using System.Linq;
 
 namespace ArtEx.EF
 {
@@ -22,40 +25,23 @@ namespace ArtEx.EF
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Artist>()
-            //    .HasMany(e => e.Products)
-            //    .WithRequired(e => e.Artist)
-            ////    .WillCascadeOnDelete(false);
+        }
 
-            //modelBuilder.Entity<Cart>()
-            //    .HasMany(e => e.CartItems)
-            //    .WithRequired(e => e.Cart)
-            //    .WillCascadeOnDelete(false);
+        public override int SaveChanges()
+        {
+            var changedEntities = ChangeTracker
+                .Entries()
+                .Where(x => x.State == EntityState.Added ||
+                            x.State == EntityState.Modified);
 
-            //modelBuilder.Entity<Order>()
-            //    .HasMany(e => e.OrderDetails)
-            //    .WithRequired(e => e.Order)
-            //    .WillCascadeOnDelete(false);
+            var errors = new List<ValidationResult>();
+            foreach (var e in changedEntities)
+            {
+                var vc = new ValidationContext(e.Entity, null, null);
+                Validator.TryValidateObject(e.Entity, vc, errors, validateAllProperties: true);
+            }
 
-            ////modelBuilder.Entity<Product>()
-            ////    .HasMany(e => e.OrderDetails)
-            ////    .WithRequired(e => e.Product)
-            ////    .WillCascadeOnDelete(false);
-
-            ////modelBuilder.Entity<Product>()
-            ////    .HasMany(e => e.Ratings)
-            ////    .WithRequired(e => e.Product)
-            ////    .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<User>()
-            //    .HasMany(e => e.Orders)
-            //    .WithRequired(e => e.User)
-            //    .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<User>()
-            //    .HasMany(e => e.Ratings)
-            //    .WithRequired(e => e.User)
-            //    .WillCascadeOnDelete(false);
+            return base.SaveChanges();
         }
     }
 }

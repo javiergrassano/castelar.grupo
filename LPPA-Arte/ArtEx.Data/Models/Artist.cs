@@ -12,24 +12,24 @@ namespace ArtEx.EF
             products = new List<Product>();
         }
 
-        [Required]
-        [StringLength(30)]
+        [Required(ErrorMessage = "Nombre requerido")]
+        [StringLength(30, ErrorMessage = "El nombre no puede superar los 30 caracteres")]
         public string firstName { get; set; }
 
-        [Required]
-        [StringLength(30)]
+        [Required(ErrorMessage = "Apellido requerido")]
+        [StringLength(30, ErrorMessage = "El apellido no puede superar los 30 caracteres")]
         public string lastName { get; set; }
 
         [NotMapped]
         public string fullName { get => $"{lastName}, {firstName}"; }
 
-        [StringLength(30)]
+        [StringLength(30, ErrorMessage = "El tiempo de vida no puede superar los 30 caracteres")]
         public string lifeSpan { get; set; }
 
-        [StringLength(30)]
+        [StringLength(30, ErrorMessage = "El pais no puede superar los 30 caracteres")]
         public string country { get; set; }
 
-        [StringLength(2000)]
+        [StringLength(2000, ErrorMessage = "El apellido no puede superar los 2000 caracteres")]
         public string description { get; set; }
 
         public int totalProducts { get; set; }

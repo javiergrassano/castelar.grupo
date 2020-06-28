@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using ArtEx.BL;
 using ArtEx.EF;
 using ArtExWeb.Helpers;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.View;
 
 namespace ArtExWeb.Controllers
 {
@@ -74,16 +75,16 @@ namespace ArtExWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Update(Product product , HttpPostedFileBase newImage)
         {
-            if (ctx.IsValid(product))
+            if (ModelState.IsValid)
             {
-                ctx.Update(product);
                 try
                 {
+                    product.image = Guid.NewGuid() + newImage.FileName.Substring(newImage.FileName.Length - 4, 4); // newImage.FileName.Substring(0,26) + newImage.FileName.Substring(newImage.FileName.Length-4, 4);
+                    ctx.Update(product);
+
                     if (newImage.ContentLength > 0)
                     {
-                        var fileName = Path.GetFileName(newImage.FileName);
-                        string _path = Path.Combine(Server.MapPath("~/public"), fileName);
-
+                        string _path = Path.Combine(Server.MapPath("~/public/picture"), product.image);
                         newImage.SaveAs(_path);
                     }
                 }
@@ -93,8 +94,9 @@ namespace ArtExWeb.Controllers
                 }
                 return RedirectToAction("Index");
             }
+            
             ViewBag.artistId = new SelectList(ctx.listArtits(), "id", "fullName");
-            return View(product);
+            return View("Edit", product);
         }
 
     }
