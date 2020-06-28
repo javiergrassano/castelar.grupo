@@ -8,71 +8,65 @@
         {
             @Html.AntiForgeryToken()
 
-        <div class="artistForm">
-            <div>
-                <div class="title">
-                    <span>Crear/Editar Producto</span>
+            <div class="artistForm">
+                <div>
+                    <div class="title">
+                        <span>Crear/Editar Producto</span>
+                    </div>
+                    <input type="submit" value="Guardar" class="btn btn-default" />
+                    @Html.ActionLink("Cancelar", "Index", null, null, new { @class = "boton_amarillo" })
                 </div>
-                <input type="submit" value="Guardar" class="btn btn-default" />
-                @Html.ActionLink("Cancelar", "Index", null, null, new { @class = "boton_amarillo" })
-            </div>
-            
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.id)
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.title, "Título", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                <hr />
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.id)
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.description, "Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.title, "Título", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+                        @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.artistId, "Artista", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.artistId, null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.artistId, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.description, "Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control", @maxlength = "250" } })
+                        @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
-            <label>Imagen</label><br />
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.TextBox("newImage", "", new { type = "file" }) <br />
-                </div>
-            </div>
-            @*<div class="form-group">
-            @Html.LabelFor(model => model.image, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.image, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.image, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.price, "Precio", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.artistId, "Artista", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.artistId, null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.artistId, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
+
+                <label>Imagen</label><br />
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextBox("newImage", "", new { type = "file" }) <br />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.price, "Precio", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
 
-            <br />
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    
+                <br />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+
+                    </div>
                 </div>
             </div>
-        </div>
         }
     </div>

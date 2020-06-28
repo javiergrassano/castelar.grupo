@@ -58,12 +58,12 @@ namespace ArtExWeb.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Update(Artist artist, HttpPostedFileBase newImage)
         {
-            if (ctx.IsValid(artist))
+            if (ModelState.IsValid)
             {
-                ctx.Update(artist);
-
                 try
                 {
+                    ctx.Update(artist);
+
                     if (newImage != null && newImage.ContentLength > 0)
                     {
                         string _FileName = $"Artist_{artist.id}.jpg";
@@ -73,12 +73,11 @@ namespace ArtExWeb.Controllers
                 }
                 catch (Exception ex)
                 {
-                    var pp = ex;
                 }
 
                 return RedirectToAction("Index");
             }
-            return View(artist);
+            return View("Edit", artist);
         }
     }
 }

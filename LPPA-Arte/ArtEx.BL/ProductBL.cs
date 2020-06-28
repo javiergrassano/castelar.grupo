@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Linq;
 
 namespace ArtEx.BL
@@ -95,18 +97,10 @@ namespace ArtEx.BL
 
         public bool IsValid(Product model)
         {
-            return Validate(model).Count == 0;
+            
+            return true;
         }
 
-        public List<InvalidRow> Validate(Product model)
-        {
-            List<InvalidRow> invalidRows = new List<InvalidRow>();
-            if (string.IsNullOrEmpty(model.title)) invalidRows.Add(new InvalidRow("Product", "title", model.id, "Valor requerido"));
-            if (string.IsNullOrEmpty(model.description)) invalidRows.Add(new InvalidRow("Product", "description", model.id, "Valor requerido"));
-            if (model.artistId <= 0) invalidRows.Add(new InvalidRow("Product", "artistId", model.id, "No se encontro un artista"));
-            if (model.price <= 0) invalidRows.Add(new InvalidRow("Product", "price", model.id, "El precio tiene que ser mayor a 0"));
-            return invalidRows;
-        }
     }
 
 }
