@@ -24,7 +24,6 @@ namespace ArtEx.EF
         [ForeignKey("artist")]
         public int artistId { get; set; }
 
-        [Required(ErrorMessage = "La imagen es requerida")]
         [StringLength(30)]
         public string image { get; set; }
 

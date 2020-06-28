@@ -75,24 +75,26 @@ namespace ArtExWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Update(Product product , HttpPostedFileBase newImage)
         {
+            ModelState["Id"].Errors.Clear();
             if (ModelState.IsValid)
             {
                 try
                 {
-                    product.image = Guid.NewGuid() + newImage.FileName.Substring(newImage.FileName.Length - 4, 4); // newImage.FileName.Substring(0,26) + newImage.FileName.Substring(newImage.FileName.Length-4, 4);
+                    product.image = DateTime.Now.ToString("yyyyMMddHHmmss") + newImage.FileName.Substring(newImage.FileName.Length - 4, 4); // newImage.FileName.Substring(0,26) + newImage.FileName.Substring(newImage.FileName.Length-4, 4);
                     ctx.Update(product);
 
                     if (newImage.ContentLength > 0)
                     {
-                        string _path = Path.Combine(Server.MapPath("~/public/picture"), product.image);
+                        string _path = Path.Combine(Server.MapPath("~/public/pictures"), product.image);
                         newImage.SaveAs(_path);
                     }
+                    return RedirectToAction("Index");
                 }
-                catch 
+                catch(Exception ex)
                 {
 
                 }
-                return RedirectToAction("Index");
+                
             }
             
             ViewBag.artistId = new SelectList(ctx.listArtits(), "id", "fullName");
