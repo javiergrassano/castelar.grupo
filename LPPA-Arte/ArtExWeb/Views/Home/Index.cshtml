@@ -20,27 +20,29 @@
             @foreach (Product item in mostSelled)
             {
                 imagenFile = $"public/pictures/{item.image}";
-                <div class="carrito-item" onclick="AddProduct(@item.id,1)">
+                <div style="padding: 10px 30px 110px 50px;" class="carrito-item" onclick="AddProduct(@item.id,1)">
 
-                    <div style="font-size:45px;"class="carrito-imagen colorDorado">
+                    <div style="font-size:45px;"class="carrito-imagen">
                         @counter1
                         @{counter1++;}
                     </div>
                     <div class="carrito-imagen">
-                        <img src="@imagenFile" />
+                        <img style="width:100px;height:100px; border-bottom: 40px; margin-bottom: 40px;" src="@imagenFile" />
                     </div>
 
                     <div class="carrito-descripcion">
-                        <span>
+                        <span style="font-size:25px;">
                             @item.title
                         </span>
+                        <!--
                         <span>
                             @item.artist.fullName
                         </span>
                         <span>
                             $@item.price
                         </span>
-                        <span>
+                        -->
+                        <span style="font-size:20px; color: yellow; text-shadow: 2px 2px #808080;">
                             @item.quantitySold Ventas
                         </span>
                     </div>
@@ -63,26 +65,28 @@
             {
                 imagenFile = $"public/pictures/{item.image}";
                 string star = $"public/star{item.avgStars.ToString("n0")}.png";
-                <div class="carrito-item" onclick="AddProduct(@item.id,1)">
+                <div style="padding: 10px 30px 110px 50px;" class="carrito-item" onclick="AddProduct(@item.id,1)">
 
-                    <div style="font-size:45px;"class="carrito-imagen colorDorado">
+                    <div style="font-size:45px;" class="carrito-imagen">
                         @counter2
                         @{counter2++;}
                     </div>
                     <div class="carrito-imagen">
-                        <img src="@imagenFile" />
+                        <img style="width:100px;height:100px; border-bottom: 40px; margin-bottom: 40px;" src="@imagenFile" />
                     </div>
                     
                     <div class="carrito-descripcion">
-                        <span>
+                        <span style="font-size:25px;">
                             @item.title
                         </span>
+                        <!--
                         <span>
                             @item.artist.fullName
                         </span>
                         <span>
                             $@item.price
                         </span>
+                        -->
                         <span>
                             <img src="@star" />
                         </span>
