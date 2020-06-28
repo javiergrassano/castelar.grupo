@@ -8,6 +8,9 @@ galeria-h1 {
 .galeria-container-all {
     margin: 20px auto 20px;
     min-height: 550px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .galeria-container {
@@ -19,6 +22,8 @@ galeria-h1 {
     position: relative;
     float: left;
     border-radius: 6px;
+    //margin-right: 10px;
+    //margin-left: 10px;
 }
 
 .galeria-imagen {
