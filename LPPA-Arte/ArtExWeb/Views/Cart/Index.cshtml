@@ -10,6 +10,7 @@
             <div class="carrito-titulo">
                 Listado de Productos
             </div>
+            <a class="boton_amarillo" style="text-align:center;" href="@Url.Action("delete","cart")">Limpiar Orden</a>
 
             @foreach (var item in Model.items)
             {
@@ -17,9 +18,8 @@
                 <div class="carrito-item">
 
                     <div class="carrito-cantidad">
-                        <span class="btn-delete">
-                            @*@Html.ActionLink("Delete", "Delete", new { id = item.id })*@
-                        </span>
+                        <a class="btn-delete" href="@Url.Action("DeleteItem", new { id = item.id })">
+                        </a>
                     </div>
 
                     <div class="carrito-imagen">

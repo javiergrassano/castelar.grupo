@@ -77,5 +77,28 @@ namespace ArtEx.BL
             return item;
         }
 
+        
+        public void DeleteCart(string cookie)
+        {
+            Cart cart = GetCart(cookie);
+            if (cart != null && cart.itemCount > 0)
+            {
+                // Borra el carrito
+                db.Carts.Remove(cart);
+                db.SaveChanges();
+            }
+        }
+
+        public void DeleteItem(int id)
+        {
+            try
+            {
+                CartItem cartItem = db.CartItems.Find(id);
+                db.CartItems.Remove(cartItem);
+                db.SaveChanges();
+            }
+            catch { }
+        }
+
     }
 }

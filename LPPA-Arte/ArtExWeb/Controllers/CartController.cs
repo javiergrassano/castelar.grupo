@@ -21,6 +21,21 @@ namespace ArtExWeb.Controllers
             return View(cart);
         }
 
+        public ActionResult Delete()
+        {
+            ctx.DeleteCart(cookie);
+            Cart cart = new Cart();
+            return View("Index",cart);
+        }
+
+        public ActionResult DeleteItem(int id)
+        {
+            ctx.DeleteItem(id);
+            Cart cart = ctx.GetCart(cookie);
+            return Redirect("/cart");
+        }
+
+
         /// <summary>
         /// Devuelve el carrido de compra actual, de no existir crea uno nuevo
         /// </summary>
