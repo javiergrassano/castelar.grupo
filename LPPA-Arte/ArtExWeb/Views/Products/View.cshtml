@@ -2,7 +2,7 @@
 @{
     string imagenFile = $"/public/pictures/{Model.image}";
     bool isAdmin = User.IsInRole("Admin");
-    string star = $"public/star{Model.avgStars.ToString("n0")}.png";
+    string star = $"/public/star{Model.avgStars.ToString("n0")}.png";
 }
 
 <section is="artistsSection">

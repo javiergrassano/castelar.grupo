@@ -94,7 +94,10 @@ namespace ArtEx.BL
             try
             {
                 CartItem cartItem = db.CartItems.Find(id);
+                Cart cart = db.Carts.Find(cartItem.cartId);
+                cart.itemCount -= cartItem.quantity;
                 db.CartItems.Remove(cartItem);
+
                 db.SaveChanges();
             }
             catch { }
