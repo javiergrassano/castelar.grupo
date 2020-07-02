@@ -152,3 +152,61 @@
 .text-danger{
     color: red;
 }
+
+/*Team Styles*/
+.inner-width{
+    max-width:1200px;
+    margin:auto;
+    padding: 0 20px;
+}
+
+
+.team {
+    text-align: center;
+    margin: 20px 0;
+    display: flex;
+}
+.integrante{
+    margin:10px;
+}
+.integrante-letra {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    border-radius: 50%;
+    line-height: 60px;
+    font-size: 25px;
+}
+
+.letra{
+    color:black;
+}
+
+.integrante-nombre{
+    font-weight: 600;
+    font-size: 18px;
+    margin:20px 0;
+}
+
+.integrante-descripcion{
+    max-width:400px;
+    margin:auto;
+    color:#333;
+    font-size:17px;
+}
+
+.about-container {
+    background: url(/public/pictures/louvre.jpg) no-repeat left;
+    background-size: 50%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 50px 0;
+}
+
+.inner-container{
+    width:55%;
+    float:right;
+    background-color: #fdfdfd;
+    padding: 120px;
+}
