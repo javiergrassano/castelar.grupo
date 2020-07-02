@@ -1,6 +1,8 @@
 ﻿@model Product
 @{
     string imagenFile = $"/public/pictures/{Model.image}";
+    bool isAdmin = User.IsInRole("Admin");
+    string star = $"public/star{Model.avgStars.ToString("n0")}.png";
 }
 
 <section is="artistsSection">
@@ -12,9 +14,12 @@
                 <span class="title">
                     @Model.title <small>(@Model.artist.fullName)</small>
                 </span>
-                <a class="boton_amarillo" href="/Products">Volver a Galería</a>
-                <a class="boton_amarillo" href="/Products/Edit/@Model.id">Editar</a>
-            </div>
+                @if (isAdmin)
+                {
+                    <a class="boton_amarillo" href="/Products">Volver a Galería</a>
+                    <a class="boton_amarillo" href="/Products/Edit/@Model.id">Editar</a>
+                }
+                </div>
             <br />
             <img class="photo" src="@imagenFile" />
             <span class="">
@@ -31,7 +36,7 @@
             </span><br /><br />
                          <span class="">
                              <strong class="bold">Estrellas:</strong><br />
-                             <img src="~/public/estrellas.png" />
+                             <img src="@star" />
                          </span>
         </div>
     </div>
