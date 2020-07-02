@@ -418,28 +418,35 @@ namespace ArtExWeb.Controllers
             DateTime dateNow = new DateTime(2020, 01, 01);
 
             var products = ctx.ListProducts("");
-            
-            do
+
+            //do
+            //{
+            //    for (int i = 0; i < rnd.Next(0, 30); i++)
+            //    {
+            //        Order order = new Order();
+            //        order.orderDate = dateNow;
+            //        for (int j = 0; j < rnd.Next(0, 4); j++)
+            //        {
+            //            var product = products[rnd.Next(0, products.Count - 1)];
+            //            OrderDetail orderDetail = new OrderDetail();
+            //            orderDetail.product = product;
+            //            orderDetail.price = product.price;
+            //            orderDetail.quantity = rnd.Next(1, 3);
+            //            order.items.Add(orderDetail);
+            //            order.totalPrice += orderDetail.total;
+            //            order.itemCount += orderDetail.quantity;
+            //        }
+            //        ctx.Update(order);
+            //    }
+            //    dateNow = dateNow.AddDays(rnd.Next(0, 3));
+            //}while(dateNow < DateTime.Now);
+
+            foreach (Product product in products)
             {
-                for (int i = 0; i < rnd.Next(0, 30); i++)
-                {
-                    Order order = new Order();
-                    order.orderDate = dateNow;
-                    for (int j = 0; j < rnd.Next(0, 4); j++)
-                    {
-                        var product = products[rnd.Next(0, products.Count - 1)];
-                        OrderDetail orderDetail = new OrderDetail();
-                        orderDetail.product = product;
-                        orderDetail.price = product.price;
-                        orderDetail.quantity = rnd.Next(1, 3);
-                        order.items.Add(orderDetail);
-                        order.totalPrice += orderDetail.total;
-                        order.itemCount += orderDetail.quantity;
-                    }
-                    ctx.Update(order);
-                }
-                dateNow = dateNow.AddDays(rnd.Next(0, 3));
-            }while(dateNow < DateTime.Now);
+                product.avgStars = (double)rnd.Next(0, 50) / 10;
+                product.quantitySold = rnd.Next(0, 500);
+                ctx.Update(product);
+            }
 
             return View("Index","Home");
         }

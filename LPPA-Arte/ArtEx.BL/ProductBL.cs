@@ -82,6 +82,8 @@ namespace ArtEx.BL
                 modelDB.artistId = model.artistId;
                 modelDB.description = model.description;
                 modelDB.price = model.price;
+                modelDB.avgStars = model.avgStars;
+                modelDB.quantitySold = model.quantitySold;
                 Audit(modelDB);
                 db.SaveChanges();
                 model.id = modelDB.id;
