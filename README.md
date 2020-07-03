@@ -22,13 +22,9 @@ Víctor Contreras
 http://one4alldev.ddns.net:6680/
 
 
-**Usuario Administrador:** admin@uai.com
+**Usuario Administrador:** admin@uai.com       **Contraseña:** Uai2020$
 
-**Contraseña:** Uai2020$
-
-**Usuario estandar:** usuario@uai.com
-
-**Contraseña:** Uai2020$
+**Usuario estandar:** usuario@uai.com          **Contraseña:** Uai2020$
 
 
 **Universidad Abierta Interamericana**
