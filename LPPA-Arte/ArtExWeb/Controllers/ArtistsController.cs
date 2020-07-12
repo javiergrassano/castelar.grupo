@@ -73,6 +73,7 @@ namespace ArtExWeb.Controllers
                 }
                 catch (Exception ex)
                 {
+                    LogHelper.Logs(ex);
                 }
 
                 return RedirectToAction("Index");

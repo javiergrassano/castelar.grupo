@@ -133,6 +133,7 @@
     <Compile Include="BusinessContext.cs" />
     <Compile Include="InvalidRow.cs" />
     <Compile Include="Exceptions\CrudException.cs" />
+    <Compile Include="ErrorBL.cs" />
     <Compile Include="ProductBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
