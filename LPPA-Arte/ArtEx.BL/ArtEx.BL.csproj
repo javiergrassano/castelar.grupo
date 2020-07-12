@@ -127,6 +127,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\DashboarModels.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="DashboardBL.cs" />
     <Compile Include="OrderBL.cs" />
     <Compile Include="CartBL.cs" />
     <Compile Include="ArtitsBL.cs" />
@@ -147,5 +150,6 @@
       <Name>ArtEx.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

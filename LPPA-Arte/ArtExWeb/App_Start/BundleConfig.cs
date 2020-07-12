@@ -10,6 +10,8 @@ namespace ArtExWeb
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/raphael.js" +
+                        "~/Scripts/morris.js" +
                         "~/Scripts/app.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

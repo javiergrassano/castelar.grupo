@@ -18,6 +18,9 @@ namespace ArtEx.EF
 
         public DateTime orderDate { get; set; }
 
+        [NotMapped]
+        public string period { get => orderDate.ToString("yyyy-MM"); }
+
         public double totalPrice { get; set; }
 
         public int orderNumber { get; set; }
@@ -25,9 +28,6 @@ namespace ArtEx.EF
         public int itemCount { get; set; }
 
         public virtual List<OrderDetail> items { get; set; }
-
-        public double total { get => items.Sum(x=>x.total); }
-
 
     }
 
