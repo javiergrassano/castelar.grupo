@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ArtEx.EF.Error>
+
+
+<div class="row content container">
+
+    <div class="artistForm">
+        <div>
+            <div class="title">
+                <span>Log de errores</span>
+            </div>
+            @Html.ActionLink("Volver al dashboard", "Index", null, null, new { @class = "boton_amarillo" })
+        </div>
+
+        <hr />
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.userId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.errorDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ipAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.userAgent)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.exception)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.message)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.everything)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.httpReferer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.pathAndQuery)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.createdOn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.createdBy)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.userId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.errorDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ipAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.userAgent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.exception)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.message)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.everything)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.httpReferer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.pathAndQuery)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.createdOn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.createdBy)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+
+            </div>
+        </div>
+    </div>
+
+</div>

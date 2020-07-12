@@ -53,5 +53,11 @@ namespace ArtExWeb.Controllers
             return RedirectToAction("Users", "Dashboard");
         }
 
+        public ActionResult Logs()
+        {
+            var errors = ctx.ListErrors();
+            return View(errors);
+        }
+
     }
 }

@@ -30,6 +30,13 @@ namespace ArtEx.BL
         }
 
 
+        public List<Error> ListErrors()
+        {
+            List<Error> rows = db.Errors.ToList();
+            return rows;
+        }
+
+
     }
 
 }
