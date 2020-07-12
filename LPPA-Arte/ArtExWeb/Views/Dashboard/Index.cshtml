@@ -1,0 +1,60 @@
+﻿@{
+    bool isAdmin = User.IsInRole("Admin");
+    List<Product> products = ViewBag.products;
+    List<SalesMonthModel> sales = ViewBag.sales;
+    List<StarCountModel> stars = ViewBag.stars;
+    
+}
+
+<section is="artistsSection">
+    <div class="row content container">
+
+        <div class="artistForm">
+
+            <div>
+                <span class="title">
+                    Dashboard
+                </span>
+                @Html.ActionLink("Usuarios registrados", "Users", null, null, new { @class = "boton_amarillo" })
+            </div>
+
+            <h1>Ventas</h1>
+            <div id="graphSales"></div>
+
+            <h1>Estrellas</h1>
+            <div id="graphStars"></div>
+
+            @{Html.RenderPartial("_products", products);}
+
+
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            var sales = @Html.Raw(Json.Encode(sales));
+            Morris.Area({
+                element: 'graphSales',
+                behaveLikeLine: true,
+                data: sales,
+                xkey: 'period',
+                ykeys: ['total','quantity'],
+                labels: ['Total','Qty']
+            });
+
+            var stars = @Html.Raw(Json.Encode(stars));
+            Morris.Bar({
+                element: 'graphStars',
+                data: stars,
+                xkey: 'star',
+                ykeys: ['quantity'],
+                labels: ['Estrellas']
+            });
+        });
+
+    </script>
+}

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ArtEx.EF.Product>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.artist.fullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantitySold)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.avgStars)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.artist.fullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantitySold)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.avgStars)
+        </td>
+    </tr>
+}
+
+</table>
