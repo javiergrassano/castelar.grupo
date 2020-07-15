@@ -478,6 +478,7 @@
     <Content Include="Views\Dashboard\Users.cshtml" />
     <Content Include="Views\Dashboard\ChangeRole.cshtml" />
     <Content Include="Views\Dashboard\Logs.cshtml" />
+    <Content Include="Views\Cart\Pay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

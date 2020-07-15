@@ -35,6 +35,12 @@ namespace ArtExWeb.Controllers
             return Redirect("/cart");
         }
 
+        [Authorize(Roles ="Admin")]
+        public ActionResult Pay()
+        {
+            Cart cart = ctx.GetCart(cookie);
+            return View(cart);
+        }
 
         /// <summary>
         /// Devuelve el carrido de compra actual, de no existir crea uno nuevo

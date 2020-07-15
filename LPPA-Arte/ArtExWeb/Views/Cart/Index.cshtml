@@ -53,17 +53,19 @@
             </div>
             <br /><br /><br />
             <!--
-                <a class="boton_amarillo" style="text-align:center;" href="@Url.Action("create","orders")">Crear orden</a>
-            -->
-            @if (Model.total > 0) {
-                <a class="boton_amarillo" style="text-align:center;" onclick="cambioDeSeccion()">Crear orden</a>
-                }
+        <a class="boton_amarillo" style="text-align:center;" href="@Url.Action("create","orders")">Crear orden</a>
+    -->
+            @if (Model.total > 0)
+            {
+        <a class="boton_amarillo" style="text-align:center;" href="@Url.Action("pay","cart")">Crear orden</a>
+                @*<a class="boton_amarillo" style="text-align:center;" onclick="cambioDeSeccion()">Crear orden2</a>*@
+            }
         </div>
     </div>
 
 </section>
 
-<section is="ValidacionPago" id="validar_pago" style="display:none">
+@*<section is="ValidacionPago" id="validar_pago" style="display:none">
     <div class="row content container">
         <h1>Formulario de pago</h1>
         <div class="carrito-container">
@@ -106,5 +108,5 @@
             y.style.display = "block";
         }
     }
-</script>
+</script>*@
  
