@@ -46,6 +46,7 @@
 
 
     @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/app.js"></script>
     <script src="~/Scripts/raphael.js"></script>
     <script src="~/Scripts/morris.min.js"></script>
     @RenderSection("scripts", required: false)
@@ -70,17 +71,17 @@
             }
         });
 
-            //$(document).on('click', 'nav a', function (e) {
-            //    e.preventDefault();
-            //    e.stopPropagation();
-            //    e.stopImmediatePropagation();
-            //    var id = $(this).attr("href");
-            //    var offset = 20;
-            //    var target = $(id).offset().top - offset;
-            //    $('html,body').animate({
-            //        scrollTop: target
-            //    }, 400);
-            //});
+                //$(document).on('click', 'nav a', function (e) {
+                //    e.preventDefault();
+                //    e.stopPropagation();
+                //    e.stopImmediatePropagation();
+                //    var id = $(this).attr("href");
+                //    var offset = 20;
+                //    var target = $(id).offset().top - offset;
+                //    $('html,body').animate({
+                //        scrollTop: target
+                //    }, 400);
+                //});
         /*
         $(document).on('click', '.logo', function (e) {
             e.preventDefault();
