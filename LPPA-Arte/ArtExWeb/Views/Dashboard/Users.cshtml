@@ -8,7 +8,7 @@
             <div class="title">
                 <span>Usuarios Registrados</span>
             </div>
-            @Html.ActionLink("Volver al dashboard", "Index", null, null, new { @class = "boton_amarillo" })
+
         </div>
 
         <hr />
@@ -46,13 +46,13 @@
             }
 
         </table>
-
-        <br />
+        @Html.ActionLink("Volver al dashboard", "Index", null, null, new { @class = "boton_amarillo" })
+        @*<br />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
 
             </div>
-        </div>
+        </div>*@
     </div>
 
 </div>

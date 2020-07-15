@@ -202,6 +202,7 @@
     background-color: #fdfdfd;
     overflow: hidden;
     padding: 50px 0;
+    margin-top: 30px;
 }
 
 .inner-container{
@@ -209,4 +210,15 @@
     float:right;
     background-color: #fdfdfd;
     padding: 120px;
+}
+
+@media (min-width: 1900px){
+    .img-home{
+        height: 975px;
+    }
+}
+@media (max-width: 1900px) {
+    .img-home {
+        height: 840px;
+    }
 }
